@@ -6,7 +6,7 @@
 /*   By: hesantan <hesantan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 12:58:27 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/07 10:10:04 by hesantan         ###   ########.fr       */
+/*   Updated: 2026/07/07 12:30:05 by hesantan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,29 +50,9 @@ int	is_duplicate(int *list, int num, int i)
 	return (0);
 }
 
-int	is_overflow(char *str)
+int	is_overflow(long num)
 {
-	int	i;
-	int	neg;
-	int j;
-
-	i = 0;
-	neg = 0;
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			neg = 1;
-		i++;
-	}
-	while (str[i] == '0')
-		i++;
-	while (str[i] != '\0')
-	{
-		i++;
-		j++;
-	}
-	if (neg == 1)
-	{
-		if (j)
-	}
+	if (num < INT_MIN || num > INT_MAX)
+		return (1);
+	return (0);
 }

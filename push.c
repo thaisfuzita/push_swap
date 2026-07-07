@@ -6,7 +6,7 @@
 /*   By: hesantan <hesantan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 13:21:20 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/07 14:54:28 by hesantan         ###   ########.fr       */
+/*   Updated: 2026/07/07 18:07:28 by hesantan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 exemplo: 
 void	ft_push(recebe t_stack **a ou **b)
 {
-	//aplica a funcao de push para a ou para b de acordo com o que recebeu.
+	
 }
 
 void	ft_pa(t_stack **a)

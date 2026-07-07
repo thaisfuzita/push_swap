@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_input.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thaisfuzita <thaisfuzita@student.42.fr>    +#+  +:+       +#+        */
+/*   By: tjulya-c <tjulya-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 12:58:27 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/06 23:06:48 by thaisfuzita      ###   ########.fr       */
+/*   Updated: 2026/07/07 10:34:05 by tjulya-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	valid_number(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (str[i] == '-' || str[i] == '+')
@@ -23,12 +23,11 @@ int	valid_number(char *str)
 			return (0);
 		i++;
 	}
-    if (str[i] == '\0')
-        return (0);
+	if (str[i] == '\0')
+		return (0);
 	while (str[i] != '\0' && ft_isdigit(str[i]))
 		i++;
 	if (str[i] != '\0')
 		return (0);
 	return (1);
 }
-

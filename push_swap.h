@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thaisfuzita <thaisfuzita@student.42.fr>    +#+  +:+       +#+        */
+/*   By: tjulya-c <tjulya-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 12:35:56 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/06 23:03:11 by thaisfuzita      ###   ########.fr       */
+/*   Updated: 2026/07/07 12:06:40 by tjulya-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,23 +33,39 @@ typedef struct s_stack
 	t_node	*bottom;
 }	t_stack;
 
+typedef enum e_strategy
+{
+	EMPTY,
+	SIMPLE,
+	MEDIUM,
+	COMPLEX,
+	ADAPTIVE
+}	t_strategy;
+
+typedef struct s_stack
+{
+	int		size;
+	t_node	*top;
+	t_node	*bottom;
+}	t_stack;
+
 typedef struct s_bench
 {
-	int	b_activate;
-	double	disorder;
-	char	*strategy;
-	int	total_ops;
-	int	sa;
-	int	sb;
-	int	ss;
-	int	pa;
-	int	pb;
-	int	ra;
-	int	rb;
-	int	rr;
-	int	rra;
-	int	rrb;
-	int	rrr;
+	int			b_activate;
+	double		disorder;
+	t_strategy	strategy;
+	int			total_ops;
+	int			sa;
+	int			sb;
+	int			ss;
+	int			pa;
+	int			pb;
+	int			ra;
+	int			rb;
+	int			rr;
+	int			rra;
+	int			rrb;
+	int			rrr;
 }	t_bench;
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: tjulya-c <tjulya-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 12:58:27 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/07 10:34:05 by tjulya-c         ###   ########.fr       */
+/*   Updated: 2026/07/07 15:57:03 by tjulya-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,22 @@ int	valid_number(char *str)
 	if (str[i] != '\0')
 		return (0);
 	return (1);
+}
+
+int	is_duplicate(int *list, int num, int i)
+{
+	while (i - 1 >= 0)
+	{
+		if (list[i - 1] == num)
+			return (1);
+		i--;
+	}
+	return (0);
+}
+
+int	is_overflow(long num)
+{
+	if (num < INT_MIN || num > INT_MAX)
+		return (1);
+	return (0);
 }

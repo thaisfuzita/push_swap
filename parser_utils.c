@@ -6,7 +6,7 @@
 /*   By: tjulya-c <tjulya-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 17:55:33 by thaisfuzita       #+#    #+#             */
-/*   Updated: 2026/07/07 15:08:35 by tjulya-c         ###   ########.fr       */
+/*   Updated: 2026/07/07 15:56:05 by tjulya-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,30 @@ int	is_strat_flag(char *str)
 	else if (ft_strncmp(str, "--adaptive", 10) == 0)
 		return (1);
 	return (0);
+}
+
+long	convert_num(char *str)
+{
+	long	num;
+	int		i;
+	int		neg;
+
+	i = 0;
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	neg = 1;
+	if (str[i] == '+' || str[i] == '-')
+	{
+		if (str[i] == '-')
+			neg = -1;
+		i++;
+	}
+	num = 0;
+	while (ft_isdigit(str[i]))
+	{
+		num = (num * 10) + (str[i] - '0');
+		i++;
+	}
+	num = num * neg;
+	return (num);
 }

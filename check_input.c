@@ -6,17 +6,15 @@
 /*   By: hesantan <hesantan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 12:58:27 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/07 12:30:05 by hesantan         ###   ########.fr       */
+/*   Updated: 2026/07/07 14:31:29 by hesantan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 void parse_flags(int argc, char **argv, )
-
-int	check_input(int	argc, char **argv, int index)
 {
-	
+	...
 }
 
 int	valid_number(char *str)

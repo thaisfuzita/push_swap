@@ -3,14 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjulya-c <tjulya-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hesantan <hesantan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 13:21:20 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/06 15:02:49 by tjulya-c         ###   ########.fr       */
+/*   Updated: 2026/07/07 14:54:28 by hesantan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+exemplo: 
+void	ft_push(recebe t_stack **a ou **b)
+{
+	//aplica a funcao de push para a ou para b de acordo com o que recebeu.
+}
 
 void	ft_pa(t_stack **a)
 {

@@ -6,15 +6,34 @@
 /*   By: thaisfuzita <thaisfuzita@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 19:08:18 by thaisfuzita       #+#    #+#             */
-/*   Updated: 2026/07/06 22:16:26 by thaisfuzita      ###   ########.fr       */
+/*   Updated: 2026/07/06 22:33:21 by thaisfuzita      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void parse_flags(int argc, char **argv, )
+int parse_flags(int argc, char **argv)
 {
-    
+    int i;
+
+    i = 1;
+    while (i < argc)
+    {
+        if (ft_strcmp(argv[i], "--bench") == 0)
+            -
+        else if (ft_strcmp(argv[i], "--simple") == 0)
+            -
+        else if (ft_strcmp(argv[i], "--medium") == 0)
+            -
+        else if (ft_strcmp(argv[i], "--complex") == 0)
+            -
+        else if (ft_strcmp(argv[i], "--adaptive") == 0)
+            -
+        else
+            return (i);
+        i++;
+    }
+    return (i);
 }
 
 int *parse_numbers(int argc, char **argv, int *count)

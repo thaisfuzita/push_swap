@@ -6,7 +6,7 @@
 /*   By: thaisfuzita <thaisfuzita@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 12:35:56 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/06 22:43:39 by thaisfuzita      ###   ########.fr       */
+/*   Updated: 2026/07/06 23:03:11 by thaisfuzita      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct s_stack
 
 typedef struct s_bench
 {
+	int	b_activate;
 	double	disorder;
 	char	*strategy;
 	int	total_ops;

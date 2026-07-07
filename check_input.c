@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_input.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
+/*   By: riks <riks@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 12:58:27 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/06 22:16:51 by hrique           ###   ########.fr       */
+/*   Updated: 2026/07/06 23:19:35 by riks             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,3 +50,29 @@ int	is_duplicate(int *list, int num, int i)
 	return (0);
 }
 
+int	is_overflow(char *str)
+{
+	int	i;
+	int	neg;
+	int j;
+
+	i = 0;
+	neg = 0;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			neg = 1;
+		i++;
+	}
+	while (str[i] == '0')
+		i++;
+	while (str[i] != '\0')
+	{
+		i++;
+		j++;
+	}
+	if (neg == 1)
+	{
+		if (j)
+	}
+}

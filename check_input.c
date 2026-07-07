@@ -6,13 +6,13 @@
 /*   By: tjulya-c <tjulya-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 12:58:27 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/07 15:57:03 by tjulya-c         ###   ########.fr       */
+/*   Updated: 2026/07/07 16:08:39 by tjulya-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	valid_number(char *str)
+int	is_valid_number(char *str)
 {
 	int	i;
 

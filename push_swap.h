@@ -6,7 +6,7 @@
 /*   By: tjulya-c <tjulya-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 12:35:56 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/07 12:06:40 by tjulya-c         ###   ########.fr       */
+/*   Updated: 2026/07/07 16:07:51 by tjulya-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,6 @@ typedef enum e_strategy
 	COMPLEX,
 	ADAPTIVE
 }	t_strategy;
-
-typedef struct s_stack
-{
-	int		size;
-	t_node	*top;
-	t_node	*bottom;
-}	t_stack;
 
 typedef struct s_bench
 {

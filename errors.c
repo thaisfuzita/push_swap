@@ -6,7 +6,7 @@
 /*   By: tjulya-c <tjulya-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 17:51:52 by thaisfuzita       #+#    #+#             */
-/*   Updated: 2026/07/07 10:27:39 by tjulya-c         ###   ########.fr       */
+/*   Updated: 2026/07/07 16:51:57 by tjulya-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,9 @@ void	free_matrix(char **list)
 		i++;
 	}
 	free(list);
+}
+
+void free_all(t_stack *a. t_stack *b, int *nums)
+{
+	
 }

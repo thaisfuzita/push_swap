@@ -6,7 +6,7 @@
 /*   By: tjulya-c <tjulya-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 13:20:42 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/07 16:01:43 by tjulya-c         ###   ########.fr       */
+/*   Updated: 2026/07/07 16:45:58 by tjulya-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,10 @@ void	ft_swap(t_stack *x)
 	x->top->next->value = temp;
 }
 
-void	ft_sa(t_stack **a)
+void	ft_sa(t_stack **a, t_bench *benchmark)
 {
 	ft_swap(a);
+	benchmark->sa++;
 }
 
 void	ft_sb(t_stack **b)

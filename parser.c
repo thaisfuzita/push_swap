@@ -6,7 +6,7 @@
 /*   By: tjulya-c <tjulya-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 19:08:18 by thaisfuzita       #+#    #+#             */
-/*   Updated: 2026/07/07 15:51:47 by tjulya-c         ###   ########.fr       */
+/*   Updated: 2026/07/07 18:12:17 by tjulya-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	parse_flags(int argc, char **argv, t_bench *bench)
 	int	i;
 
 	i = 0;
-	while (i < argc)
+	while (i < argc && i < 2)
 	{
 		if (is_strat_flag(argv[i]) && bench->strategy != EMPTY)
 			return (i);
@@ -50,17 +50,28 @@ int	*parse_numbers(int argc, char **argv, int *count, t_bench *bench)
 	free(str_args);
 	argc = items_num(args);
 	flags = parse_flags(argc, args, bench);
+	if (argc - flags <= 0)
+	{
+		free_matrix(args);
+		*count = 0;
+		return (NULL);
+	}
 	list = parse_and_validate(argc, args, flags);
 	free_matrix(args);
+	if (!list)
+	{
+		*count = -1;
+		return (NULL);
+	}
 	*count = argc - flags;
 	return (list);
 }
 
-int	*parse_and_validate(int argc, char **argv, int index)
+int	*parse_and_validate(int argc, char **args, int index)
 {
-	int	*list;
-	int	i;
-	int	num;
+	int		*list;
+	int		i;
+	long	num;
 
 	list = malloc((argc - index) * sizeof(int));
 	if (!list)
@@ -68,14 +79,14 @@ int	*parse_and_validate(int argc, char **argv, int index)
 	i = 0;
 	while (index < argc)
 	{
-		if (!is_valid_number(argv[index]))
+		if (!is_valid_number(args[index]))
 			return (free(list), NULL);
-		num = convert_num(argv[index]);
+		num = convert_num(args[index]);
 		if (is_overflow(num))
 			return (free(list), NULL);
 		if (is_duplicate(list, num, i))
 			return (free(list), NULL);
-		list[i] = num;
+		list[i] = (int)num;
 		i++;
 		index++;
 	}

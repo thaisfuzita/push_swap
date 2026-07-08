@@ -1,41 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   print_number.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/06 13:20:42 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/08 16:58:11 by hrique           ###   ########.fr       */
+/*   Created: 2026/06/30 17:28:32 by hesantan          #+#    #+#             */
+/*   Updated: 2026/07/08 17:40:26 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_swap(t_stack *x)
+int	print_nbr(int n)
 {
-	int	temp;
+	long int	nbr;
+	char		x;
+	int			i;
 
-	if (!x->top || !x->top->next)
-		return ;
-	temp = x->top->value;
-	x->top->value = x->top->next->value;
-	x->top->next->value = temp;
+	i = 0;
+	nbr = n;
+	if (n < 0)
+	{
+		nbr = -nbr;
+		write(1, "-", 1);
+		i++;
+	}
+	if (nbr >= 10)
+		i += print_nbr(nbr / 10);
+	x = (nbr % 10) + '0';
+	i++;
+	write(1, &x, 1);
+	return (i);
 }
 
-void	ft_sa(t_stack *a) //t_bench *benchmark
+int	print_unint(unsigned int n)
 {
-	ft_swap(a);
-	//benchmark->sa++;
-}
+	char	x;
+	int		i;
 
-void	ft_sb(t_stack *b)
-{
-	ft_swap(b);
-}
-
-void	ft_ss(t_stack *a, t_stack *b)
-{
-	ft_swap(a);
-	ft_swap(b);
+	i = 0;
+	if (n >= 10)
+		i += print_unint(n / 10);
+	x = (n % 10) + '0';
+	i++;
+	write(1, &x, 1);
+	return (i);
 }

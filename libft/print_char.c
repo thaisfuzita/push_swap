@@ -1,41 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   print_char.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/06 13:20:42 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/08 16:58:11 by hrique           ###   ########.fr       */
+/*   Created: 2026/06/30 17:28:58 by hesantan          #+#    #+#             */
+/*   Updated: 2026/07/08 17:40:09 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_swap(t_stack *x)
+int	print_char(char c)
 {
-	int	temp;
-
-	if (!x->top || !x->top->next)
-		return ;
-	temp = x->top->value;
-	x->top->value = x->top->next->value;
-	x->top->next->value = temp;
+	write(1, &c, 1);
+	return (1);
 }
 
-void	ft_sa(t_stack *a) //t_bench *benchmark
+int	print_str(char *s)
 {
-	ft_swap(a);
-	//benchmark->sa++;
-}
+	int		i;
 
-void	ft_sb(t_stack *b)
-{
-	ft_swap(b);
-}
-
-void	ft_ss(t_stack *a, t_stack *b)
-{
-	ft_swap(a);
-	ft_swap(b);
+	i = 0;
+	if (!s)
+	{
+		write (1, "(null)", 6);
+		return (6);
+	}
+	while (s[i])
+		i += print_char(s[i]);
+	return (i);
 }

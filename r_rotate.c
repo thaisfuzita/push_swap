@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   r_rotate.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hesantan <hesantan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 13:22:44 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/07 17:24:45 by hesantan         ###   ########.fr       */
+/*   Updated: 2026/07/08 16:20:59 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,10 @@ void	ft_r_rotate(t_stack *x)
 	old_top = x->top;
 	old_bottom = x->bottom;
 	new_bottom = x->bottom->prev;
-
 	old_top->prev = old_bottom;
 	old_bottom->next = old_top;
 	new_bottom->next = NULL;
 	old_bottom->prev = NULL;
-	
 	x->top = old_bottom;
 	x->bottom = new_bottom;
 }

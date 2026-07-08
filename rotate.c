@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hesantan <hesantan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 13:22:37 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/07 17:17:00 by hesantan         ###   ########.fr       */
+/*   Updated: 2026/07/08 16:20:41 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,10 @@ void	ft_rotate(t_stack *x)
 		return ;
 	old_top = x->top;
 	new_top = x->top->next;
-
 	x->bottom->next = x->top;
 	x->top->prev = x->bottom;
 	new_top->prev = NULL;
 	old_top->next = NULL;
-	
 	x->top = new_top;
 	x->bottom = old_top;
 	

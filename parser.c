@@ -3,86 +3,113 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thaisfuzita <thaisfuzita@student.42.fr>    +#+  +:+       +#+        */
+/*   By: tjulya-c <tjulya-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 19:08:18 by thaisfuzita       #+#    #+#             */
-/*   Updated: 2026/07/06 23:06:58 by thaisfuzita      ###   ########.fr       */
+/*   Updated: 2026/07/07 18:12:17 by tjulya-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int parse_flags(int argc, char **argv, t_bench *bench)
+int	parse_flags(int argc, char **argv, t_bench *bench)
 {
-    int i;
+	int	i;
 
-    i = 1;
-    while (i < argc)
-    {
-        if (ft_strcmp(argv[i], "--bench") == 0)
-            bench->b_activate = 1;
-        else if (ft_strcmp(argv[i], "--simple") == 0)
-            bench->strategy = "Simple / O(n²)";
-        else if (ft_strcmp(argv[i], "--medium") == 0)
-            bench->strategy = "Medium / O(n√n)";
-        else if (ft_strcmp(argv[i], "--complex") == 0)
-            bench->strategy = "Complex / O(n log n)";
-        else if (ft_strcmp(argv[i], "--adaptive") == 0)
-            bench->strategy = "Adaptive";
-        else
-            return (i);
-        i++;
-    }
-    return (i);
+	i = 0;
+	while (i < argc && i < 2)
+	{
+		if (is_strat_flag(argv[i]) && bench->strategy != EMPTY)
+			return (i);
+		if (ft_strncmp(argv[i], "--bench", 7) == 0)
+			bench->b_activate = 1;
+		else if (ft_strncmp(argv[i], "--simple", 8) == 0)
+			bench->strategy = SIMPLE;
+		else if (ft_strncmp(argv[i], "--medium", 8) == 0)
+			bench->strategy = MEDIUM;
+		else if (ft_strncmp(argv[i], "--complex", 9) == 0)
+			bench->strategy = COMPLEX;
+		else if (ft_strncmp(argv[i], "--adaptive", 10) == 0)
+			bench->strategy = ADAPTIVE;
+		else
+			return (i);
+		i++;
+	}
+	return (i);
 }
 
-int *parse_numbers(int argc, char **argv, int *count)
+int	*parse_numbers(int argc, char **argv, int *count, t_bench *bench)
 {
-    int *list;
-    int i;
-    int is_allocated;
+	int		*list;
+	int		flags;
+	char	*str_args;
+	char	**args;
 
-    i = 1;
-    is_allocated = 0;
-    if (argc == 2)
-    {
-        if (ft_strchr(argv[1], ' '))
-        {
-            argv = split_args(argv[1]);
-            argc = items_num(argv);
-            i = 0;
-            is_allocated = 1;
-        }
-    }
-    list = parse_and_validate(argc, argv, i);
-    if (is_allocated == 1)
-        free_matrix(argv);
-    *count = argc - i;
-    return(list);
+	str_args = join_args(argc, argv);
+	args = split_args(str_args);
+	free(str_args);
+	argc = items_num(args);
+	flags = parse_flags(argc, args, bench);
+	if (argc - flags <= 0)
+	{
+		free_matrix(args);
+		*count = 0;
+		return (NULL);
+	}
+	list = parse_and_validate(argc, args, flags);
+	free_matrix(args);
+	if (!list)
+	{
+		*count = -1;
+		return (NULL);
+	}
+	*count = argc - flags;
+	return (list);
 }
 
-int *parse_and_validate(int argc, char **argv, int index)
+int	*parse_and_validate(int argc, char **args, int index)
 {
-    int *list;
-    int i;
-    int num;
-    
-    list = malloc((argc - index) * sizeof(int));
-    if (!list)
-        return (NULL);
-    i = 0;
-    while (index < argc)
-    {
-        if (!is_valid_number(argv[index]))
-            return (free(list), NULL);
-        if (is_overflow(argv[index]))
-            return (free(list), NULL);
-        num = convert_num(argv[index]);
-        if (is_duplicate(list, num, i))
-            return (free(list), NULL);
-        list[i] = num;
-        i++;
-        index++;
-    }
-    return (list);
+	int		*list;
+	int		i;
+	long	num;
+
+	list = malloc((argc - index) * sizeof(int));
+	if (!list)
+		return (NULL);
+	i = 0;
+	while (index < argc)
+	{
+		if (!is_valid_number(args[index]))
+			return (free(list), NULL);
+		num = convert_num(args[index]);
+		if (is_overflow(num))
+			return (free(list), NULL);
+		if (is_duplicate(list, num, i))
+			return (free(list), NULL);
+		list[i] = (int)num;
+		i++;
+		index++;
+	}
+	return (list);
+}
+
+char	*join_args(int argc, char **argv)
+{
+	int		i;
+	char	*str;
+	char	*tmp1;
+	char	*tmp2;
+
+	i = 2;
+	str = ft_strdup(argv[1]);
+	while (i < argc)
+	{
+		tmp1 = ft_strjoin(str, " ");
+		tmp2 = ft_strjoin(tmp1, argv[i]);
+		free(str);
+		str = tmp2;
+		free(tmp1);
+		i++;
+	}
+	return (str);
 }

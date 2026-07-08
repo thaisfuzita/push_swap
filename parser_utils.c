@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hesantan <hesantan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: riks <riks@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 17:55:33 by thaisfuzita       #+#    #+#             */
-/*   Updated: 2026/07/07 12:32:19 by hesantan         ###   ########.fr       */
+/*   Updated: 2026/07/07 21:26:22 by riks             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,19 @@ int	items_num(char **list)
 	return (num);
 }
 
+int	is_strat_flag(char *str)
+{
+	if (ft_strncmp(str, "--simple", 8) == 0)
+		return (1);
+	else if (ft_strncmp(str, "--medium", 8) == 0)
+		return (1);
+	else if (ft_strncmp(str, "--complex", 9) == 0)
+		return (1);
+	else if (ft_strncmp(str, "--adaptive", 10) == 0)
+		return (1);
+	return (0);
+}
+
 long	convert_num(char *str)
 {
 	long	num;
@@ -43,19 +56,19 @@ long	convert_num(char *str)
 	int		neg;
 
 	i = 0;
-	while (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13))
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
 		i++;
 	neg = 1;
-	if (nptr[i] == '+' || nptr[i] == '-')
+	if (str[i] == '+' || str[i] == '-')
 	{
-		if (nptr[i] == '-')
+		if (str[i] == '-')
 			neg = -1;
 		i++;
 	}
 	num = 0;
-	while (ft_isdigit(nptr[i]))
+	while (ft_isdigit(str[i]))
 	{
-		num = (num * 10) + (nptr[i] - '0');
+		num = (num * 10) + (str[i] - '0');
 		i++;
 	}
 	num = num * neg;

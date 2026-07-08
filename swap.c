@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hesantan <hesantan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: riks <riks@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 13:20:42 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/07 15:33:35 by hesantan         ###   ########.fr       */
+/*   Updated: 2026/07/07 21:27:43 by riks             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_swap(t_stack *x)
 {
 	int	temp;
-	
+
 	if (!x->top || !x->top->next)
 		return ;
 	temp = x->top->value;
@@ -23,16 +23,18 @@ void	ft_swap(t_stack *x)
 	x->top->next->value = temp;
 }
 
-void	ft_sa(t_stack *a)
+void	ft_sa(t_stack **a, t_bench *benchmark)
 {
 	ft_swap(a);
+	benchmark->sa++;
 }
-void	ft_sb(t_stack *b)
+
+void	ft_sb(t_stack **b)
 {
 	ft_swap(b);
 }
 
-void	ft_ss(t_stack *a, t_stack *b)
+void	ft_sa(t_stack *a)
 {
 	ft_swap(a);
 	ft_swap(b);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_input.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hesantan <hesantan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: riks <riks@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 12:58:27 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/07 14:31:29 by hesantan         ###   ########.fr       */
+/*   Updated: 2026/07/07 21:24:18 by riks             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void parse_flags(int argc, char **argv, )
 
 int	valid_number(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (str[i] == '\0')

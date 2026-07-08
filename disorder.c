@@ -1,4 +1,18 @@
-int	ft_check_disorder(stack a) //verifica a desordem da stack
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   disorder.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: riks <riks@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/07/07 15:57:32 by tjulya-c          #+#    #+#             */
+/*   Updated: 2026/07/07 21:25:24 by riks             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
+
+int	ft_check_disorder(t_stack a)
 {
 	int	mistakes;
 	int	total_pairs;
@@ -9,7 +23,7 @@ int	ft_check_disorder(stack a) //verifica a desordem da stack
 	mistakes = 0;
 	total_pairs = 0;
 	i = 0;
-	size = ft_lstsize(t_stack a); //provavelmente esta errado
+	size = ft_lstsize(a);
 	while (i < (size - 1))
 	{
 		j = i + 1;
@@ -20,7 +34,5 @@ int	ft_check_disorder(stack a) //verifica a desordem da stack
 				mistakes += 1;
 		}
 	}
-	return (mistakes / total_pairs); //retorna a media de desordem
-	//desordem 1 totalmente desordenado
-	//desordem 0 totalmente ordenado
+	return (mistakes / total_pairs);
 }

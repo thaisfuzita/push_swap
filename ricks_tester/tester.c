@@ -132,16 +132,12 @@ int	main(int argc, char **argv)
 	ft_pb(a, b);
 	print_both(a, b);
 
-	ft_printf("--- exec ra ---\n");
-	ft_ra(a);
+	ft_printf("--- exec rr ---\n");
+	ft_rr(a, b);
 	print_both(a, b);
 
-	ft_printf("--- exec rra ---\n");
-	ft_rra(a);
-	print_both(a, b);
-
-	ft_printf("--- exec rb ---\n");
-	ft_rb(b);
+	ft_printf("--- exec rrr ---\n");
+	ft_rrr(a, b);
 	print_both(a, b);
 
 	ft_printf("--- exec pa ---\n");

@@ -6,7 +6,7 @@
 /*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/30 17:28:32 by hesantan          #+#    #+#             */
-/*   Updated: 2026/07/08 17:40:26 by hrique           ###   ########.fr       */
+/*   Updated: 2026/07/09 12:00:33 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	print_nbr(int n)
 		i += print_nbr(nbr / 10);
 	x = (nbr % 10) + '0';
 	i++;
-	write(1, &x, 1);
+	write(2, &x, 1);
 	return (i);
 }
 
@@ -44,6 +44,6 @@ int	print_unint(unsigned int n)
 		i += print_unint(n / 10);
 	x = (n % 10) + '0';
 	i++;
-	write(1, &x, 1);
+	write(2, &x, 1);
 	return (i);
 }

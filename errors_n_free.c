@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors.c                                           :+:      :+:    :+:   */
+/*   errors_n_free.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: riks <riks@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 17:51:52 by thaisfuzita       #+#    #+#             */
-/*   Updated: 2026/07/07 21:25:53 by riks             ###   ########.fr       */
+/*   Updated: 2026/07/09 12:27:20 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,14 @@ void	free_matrix(char **list)
 	free(list);
 }
 
-void free_all(t_stack *a. t_stack *b, int *nums)
+void free_all(t_stack *a, t_stack *b, int *nums)
 {
 	
+	
+	free(nums);
+}
+void	check_error(int count)
+{
+	if (count == -1)
+		write (2, "Error\n", 6);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjulya-c <tjulya-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thaisfuzita <thaisfuzita@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 14:31:23 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/07 16:52:46 by tjulya-c         ###   ########.fr       */
+/*   Updated: 2026/07/09 12:10:13 by thaisfuzita      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,16 @@ int	main(int argc, char **argv)
 		return (0);
 	numbers = parse_numbers(argc, argv, &count, &benchmark);
 	if (!numbers)
-	{
-		if (count == -1)
-			write (2, "Error\n", 6);
-		return (0);
-	}
+		return (check_error(count), 0);
 	init_stack(&a);
 	init_stack(&b);
+	init_bench(&benchmark);
 	populate(&a, numbers, count);
 	order()
 	{
 	
 	}
-	free_all();
+	free_all(&a, &b, numbers);
 	return (0);
 }
 
@@ -52,16 +49,28 @@ void	populate(t_stack *x, int *numbers, int count)
 	
 }
 
-int	is_ordered(t_stack x)
+/*int main(int argc, char **argv)
 {
-	
-}
-order()
-{
-	exec_mode()
-}
+	int	i;
+	t_bench	benchmark;
+	int		*numbers;
+	int		count;
 
-exec_mode()
-{
-	is_ordered();
-}
+	if (argc < 2)
+		return (0);
+	numbers = parse_numbers(argc, argv, &count, &benchmark);
+	if (!numbers)
+	{
+		if (count == -1)
+			write (2, "Error\n", 6);
+		return (0);
+	}
+	i = 0;
+	while (i < count)
+	{
+		ft_putnbr_fd(numbers[i], 2);
+		write(2, "\n", 1);
+		i++;
+	}
+	return (0);
+}*/

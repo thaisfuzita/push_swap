@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjulya-c <tjulya-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thaisfuzita <thaisfuzita@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 17:55:33 by thaisfuzita       #+#    #+#             */
-/*   Updated: 2026/07/07 16:10:27 by tjulya-c         ###   ########.fr       */
+/*   Updated: 2026/07/09 11:34:03 by thaisfuzita      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 char	**split_args(char *str)
 {
 	char	**list;
-	int		num;
 
 	list = ft_split(str, ' ');
 	return (list);

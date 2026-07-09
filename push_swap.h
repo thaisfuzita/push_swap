@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjulya-c <tjulya-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thaisfuzita <thaisfuzita@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 12:35:56 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/07 16:07:51 by tjulya-c         ###   ########.fr       */
+/*   Updated: 2026/07/09 11:32:43 by thaisfuzita      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,19 @@ typedef struct s_bench
 	int			rrb;
 	int			rrr;
 }	t_bench;
+
+int main(int argc, char **argv);
+int	is_valid_number(char *str);
+int	is_duplicate(int *list, int num, int i);
+int	is_overflow(long num);
+void	free_matrix(char **list);
+int	parse_flags(int argc, char **argv, t_bench *bench);
+int	*parse_numbers(int argc, char **argv, int *count, t_bench *bench);
+int	*parse_and_validate(int argc, char **args, int index);
+char	*join_args(int argc, char **argv);
+char	**split_args(char *str);
+int	items_num(char **list);
+int	is_strat_flag(char *str);
+long	convert_num(char *str);
 
 #endif

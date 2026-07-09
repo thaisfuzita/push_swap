@@ -10,8 +10,8 @@ t_stack	*init_stack(int *values, int count)
 {
 	t_stack	*s;
 	t_node	*new_node;
-	int		i;
 
+	int		i;
 	s = malloc(sizeof(t_stack));
 	if (!s)
 		return (NULL);
@@ -95,12 +95,14 @@ int	main(int argc, char **argv)
 	t_stack	*b;
 	int		*values;
 	int		count;
+	t_bench bench;
 
 	if (argc < 2)
 	{
 		ft_printf("uso: %s numero1 numero2 ...\n", argv[0]);
 		return (1);
 	}
+	ft_bzero(&bench, sizeof(t_bench));
 	count = argc - 1;
 	values = args_to_values(argv, count);
 	if (!values)
@@ -117,32 +119,34 @@ int	main(int argc, char **argv)
 	/* Edite essa sequencia livremente para testar o que quiser */
 
 	ft_printf("--- exec sa ---\n");
-	ft_sa(a);
+	ft_sa(a, &bench);
 	print_both(a, b);
 
 	ft_printf("--- exec pb ---\n");
-	ft_pb(a, b);
+	ft_pb(a, b, &bench);
 	print_both(a, b);
 
 	ft_printf("--- exec pb ---\n");
-	ft_pb(a, b);
+	ft_pb(a, b, &bench);
 	print_both(a, b);
 
 	ft_printf("--- exec pb ---\n");
-	ft_pb(a, b);
+	ft_pb(a, b, &bench);
 	print_both(a, b);
 
 	ft_printf("--- exec rr ---\n");
-	ft_rr(a, b);
+	ft_rr(a, b, &bench);
 	print_both(a, b);
 
-	ft_printf("--- exec rrr ---\n");
-	ft_rrr(a, b);
+	ft_printf("--- exec r_rr ---\n");
+	ft_r_rr(a, b, &bench);
 	print_both(a, b);
 
 	ft_printf("--- exec pa ---\n");
-	ft_pa(a, b);
+	ft_pa(a, b, &bench);
 	print_both(a, b);
+
+	ft_printf("Total ops: %d\n", bench.total_ops);
 
 	return (0);
 }

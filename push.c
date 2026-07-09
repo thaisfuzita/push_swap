@@ -6,7 +6,7 @@
 /*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 13:21:20 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/09 11:30:06 by hrique           ###   ########.fr       */
+/*   Updated: 2026/07/09 13:19:40 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	change_top_bot(t_stack *x, t_node *new)
 	x->bottom = new;
 }
 
-void	ft_push(t_stack *src, t_stack *dst)
+static void	ft_push(t_stack *src, t_stack *dst)
 {
 	t_node  *move;
 	
@@ -44,12 +44,16 @@ void	ft_push(t_stack *src, t_stack *dst)
 	dst->size++;
 }
 
-void	ft_pa(t_stack *a, t_stack *b)
+void	ft_pa(t_stack *a, t_stack *b, t_bench *benchmark)
 {
 	ft_push(b, a);
+	benchmark->pa++;
+	benchmark->total_ops++;
 }
 
-void	ft_pb(t_stack *a, t_stack *b)
+void	ft_pb(t_stack *a, t_stack *b, t_bench *benchmark)
 {
 	ft_push(a, b);
+	benchmark->pb++;
+	benchmark->total_ops++;
 }

@@ -6,13 +6,13 @@
 /*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 13:20:42 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/09 12:31:25 by hrique           ###   ########.fr       */
+/*   Updated: 2026/07/09 13:28:58 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_swap(t_stack *x)
+static void	ft_swap(t_stack *x)
 {
 	int	temp;
 

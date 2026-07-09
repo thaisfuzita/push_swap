@@ -6,7 +6,7 @@
 /*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 12:35:56 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/09 12:30:37 by hrique           ###   ########.fr       */
+/*   Updated: 2026/07/09 13:28:44 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,21 +61,17 @@ typedef struct s_bench
 	int			rrr;
 }	t_bench;
 
-void	ft_push(t_stack *src, t_stack *dst);
-void	ft_pa(t_stack *a, t_stack *b);
-void	ft_pb(t_stack *a, t_stack *b);
-void	ft_r_rotate(t_stack *x);
-void	ft_rra(t_stack *a);
-void	ft_rrb(t_stack *b);
-void	ft_rrr(t_stack *a, t_stack *b);
-void	ft_rotate(t_stack *x);
-void	ft_ra(t_stack *a);
-void	ft_rb(t_stack *b);
-void	ft_rr(t_stack *a, t_stack *b);
-void	ft_swap(t_stack *x);
-void	ft_sa(t_stack *a);
-void	ft_sb(t_stack *b);
-void	ft_ss(t_stack *a, t_stack *b);
+void	ft_pa(t_stack *a, t_stack *b, t_bench *benchmark);
+void	ft_pb(t_stack *a, t_stack *b, t_bench *benchmark);
+void	ft_r_ra(t_stack *a, t_bench *benchmark);
+void	ft_r_rb(t_stack *b, t_bench *benchmark);
+void	ft_r_rr(t_stack *a, t_stack *b, t_bench *benchmark);
+void	ft_ra(t_stack *a, t_bench *benchmark);
+void	ft_rb(t_stack *b, t_bench *benchmark);
+void	ft_rr(t_stack *a, t_stack *b, t_bench *benchmark);
+void	ft_sa(t_stack *a, t_bench *benchmark);
+void	ft_sb(t_stack *b, t_bench *benchmark);
+void	ft_ss(t_stack *a, t_stack *b, t_bench *benchmark);
 int 	main(int argc, char **argv);
 int		is_valid_number(char *str);
 int		is_duplicate(int *list, int num, int i);

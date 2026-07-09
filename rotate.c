@@ -6,13 +6,13 @@
 /*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 13:22:37 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/08 16:20:41 by hrique           ###   ########.fr       */
+/*   Updated: 2026/07/09 13:25:47 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_rotate(t_stack *x)
+static void	ft_rotate(t_stack *x)
 {
 	t_node	*old_top;
 	t_node	*new_top;
@@ -30,18 +30,24 @@ void	ft_rotate(t_stack *x)
 	
 }
 
-void	ft_ra(t_stack *a)
+void	ft_ra(t_stack *a, t_bench *benchmark)
 {
 	ft_rotate(a);
+	benchmark->ra++;
+	benchmark->total_ops++;
 }
 
-void	ft_rb(t_stack *b)
+void	ft_rb(t_stack *b, t_bench *benchmark)
 {
 	ft_rotate(b);
+	benchmark->rb++;
+	benchmark->total_ops++;
 }
 
-void	ft_rr(t_stack *a, t_stack *b)
+void	ft_rr(t_stack *a, t_stack *b, t_bench *benchmark)
 {
 	ft_rotate(a);
 	ft_rotate(b);
+	benchmark->rr++;
+	benchmark->total_ops++;
 }

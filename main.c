@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thaisfuzita <thaisfuzita@student.42.fr>    +#+  +:+       +#+        */
+/*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 14:31:23 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/09 12:10:13 by thaisfuzita      ###   ########.fr       */
+/*   Updated: 2026/07/09 14:33:59 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,7 @@ void	populate(t_stack *x, int *numbers, int count)
 	i = 0;
 	while (i < count)
 	{
-		ft_putnbr_fd(numbers[i], 2);
-		write(2, "\n", 1);
+		ft_printf("%d\n", numbers[i]);
 		i++;
 	}
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 13:21:20 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/08 16:47:44 by hrique           ###   ########.fr       */
+/*   Updated: 2026/07/09 11:30:06 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,12 @@ void	ft_push(t_stack *src, t_stack *dst)
 	else
 		change_top_bot(src, NULL);
 	src->size--;
+	move->next = NULL;
+	move->prev = NULL;
 	if (dst->top)
 	{
 		dst->top->prev = move;
 		move->next = dst->top;
-		move->prev = NULL;
 		dst->top = move;
 	}
 	else

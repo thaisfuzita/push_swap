@@ -3,19 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   check_input.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: riks <riks@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: thaisfuzita <thaisfuzita@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 12:58:27 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/07 21:24:18 by riks             ###   ########.fr       */
+/*   Updated: 2026/07/09 15:00:28 by thaisfuzita      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void parse_flags(int argc, char **argv, )
-{
-	...
-}
 
 int	valid_number(char *str)
 {

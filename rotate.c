@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: riks <riks@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 13:22:37 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/11 15:26:12 by riks             ###   ########.fr       */
+/*   Updated: 2026/07/11 18:55:21 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,22 +31,31 @@ static void	ft_rotate(t_stack *x)
 
 void	ft_ra(t_stack *a, t_bench *benchmark)
 {
+	if (a->size <= 1)
+		return ;
 	ft_rotate(a);
+	print_op("ra", benchmark);
 	benchmark->ra++;
 	benchmark->total_ops++;
 }
 
 void	ft_rb(t_stack *b, t_bench *benchmark)
 {
+	if (b->size <= 1)
+		return ;
 	ft_rotate(b);
+	print_op("rb", benchmark);
 	benchmark->rb++;
 	benchmark->total_ops++;
 }
 
 void	ft_rr(t_stack *a, t_stack *b, t_bench *benchmark)
 {
+	if (a->size <= 1 && b->size <= 1)
+		return ;
 	ft_rotate(a);
 	ft_rotate(b);
+	print_op("rr", benchmark);
 	benchmark->rr++;
 	benchmark->total_ops++;
 }

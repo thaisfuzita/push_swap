@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: riks <riks@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 13:22:37 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/10 21:40:35 by marvin           ###   ########.fr       */
+/*   Updated: 2026/07/11 15:26:12 by riks             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	ft_rotate(t_stack *x)
 {
 	t_node	*old_top;
 	t_node	*new_top;
-	
+
 	if (x->size <= 1)
 		return ;
 	old_top = x->top;

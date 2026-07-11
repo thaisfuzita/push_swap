@@ -6,39 +6,11 @@
 /*   By: thaisfuzita <thaisfuzita@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/07 15:57:32 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/09 17:19:58 by thaisfuzita      ###   ########.fr       */
+/*   Updated: 2026/07/09 22:59:23 by thaisfuzita      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	ordenation(t_stack *a, t_stack *b, t_bench *bm)
-{
-	float	disorder;
-
-	disorder = ft_check_disorder(a);
-	bm->disorder = disorder;
-	exec_mode(a, b, bm, disorder);
-	if (bm->b_activate == 1)
-		print_bench(bm);
-}
-
-static void	exec_mode(t_stack *a, t_stack *b, t_bench *bm, float disorder)
-{
-	int	mode;
-
-	if (is_ordered(disorder))
-		return ;
-	mode = bm->strategy;
-	if (mode == 1)
-		simple(a, b, bm);
-	else if (mode == 2)
-		medium(a, b, bm);
-	else if (mode == 3)
-		complex(a, b, bm);
-	else 
-		adaptive(a, b, bm, disorder);
-}
 
 static int	is_ordered(float disorder)
 {
@@ -50,11 +22,28 @@ static int	is_ordered(float disorder)
 static void	adaptive(t_stack *a, t_stack *b, t_bench *bm, float disorder)
 {
 	if (disorder < 0.2)
-		simple(a, b, bm);
+		simple();
 	else if (disorder >= 0.2 && disorder < 0.5)
 		medium(a, b, bm);
 	else
-		complex(a, b, bm);
+		complex();
+}
+
+static void	exec_mode(t_stack *a, t_stack *b, t_bench *bm, float disorder)
+{
+	int	mode;
+
+	if (is_ordered(disorder))
+		return ;
+	mode = bm->strategy;
+	if (mode == 1)
+		simple();
+	else if (mode == 2)
+		medium(a, b, bm);
+	else if (mode == 3)
+		complex();
+	else 
+		adaptive(a, b, bm, disorder);
 }
 
 static float	ft_check_disorder(t_stack *a)
@@ -81,4 +70,15 @@ static float	ft_check_disorder(t_stack *a)
 		nx = nd->next;
 	}
 	return (mistakes / (float)total_pairs);
+}
+
+void	ordernation(t_stack *a, t_stack *b, t_bench *bm)
+{
+	float	disorder;
+
+	disorder = ft_check_disorder(a);
+	bm->disorder = disorder;
+	exec_mode(a, b, bm, disorder);
+	/*if (bm->b_activate == 1)
+		print_bench(bm);*/
 }

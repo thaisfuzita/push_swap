@@ -6,34 +6,17 @@
 /*   By: thaisfuzita <thaisfuzita@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 14:31:23 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/09 17:46:45 by thaisfuzita      ###   ########.fr       */
+/*   Updated: 2026/07/09 22:48:14 by thaisfuzita      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+static void	init_stack(t_stack *x)
 {
-	t_stack	a;
-	t_stack	b;
-	t_bench	bm;
-	int		*numbers;
-	int		count;
-
-	if (argc < 2)
-		return (0);
-	init_bench(&bm);
-	numbers = parse_numbers(argc, argv, &count, &bm);
-	if (!numbers)
-		return (check_error(count), 1);
-	if (count < 2)
-		return (0);
-	init_stack(&a);
-	init_stack(&b);
-	if (populate(&a, numbers, count) == 0)
-		ordernation(&a, &b, &bm);
-	free_all(&a, &b, numbers);
-	return (0);
+	x->size = 0;
+	x->top = NULL;
+	x->bottom = NULL;
 }
 
 static t_node	*new_node(int value)
@@ -75,5 +58,29 @@ static int	populate(t_stack *a, int *numbers, int count)
 		a->size++;
 		i--;
 	}
+	return (0);
+}
+
+int	main(int argc, char **argv)
+{
+	t_stack	a;
+	t_stack	b;
+	t_bench	bm;
+	int		*numbers;
+	int		count;
+
+	if (argc < 2)
+		return (0);
+	init_bench(&bm);
+	numbers = parse_numbers(argc, argv, &count, &bm);
+	if (!numbers)
+		return (check_error(count), 1);
+	if (count < 2)
+		return (0);
+	init_stack(&a);
+	init_stack(&b);
+	if (populate(&a, numbers, count) == 0)
+		ordernation(&a, &b, &bm);
+	free_all(&a, &b, numbers);
 	return (0);
 }

@@ -6,13 +6,13 @@
 /*   By: thaisfuzita <thaisfuzita@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 12:58:27 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/09 15:00:28 by thaisfuzita      ###   ########.fr       */
+/*   Updated: 2026/07/09 23:00:02 by thaisfuzita      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	valid_number(char *str)
+int	is_valid_number(char *str)
 {
 	int	i;
 

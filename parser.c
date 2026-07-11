@@ -6,7 +6,7 @@
 /*   By: thaisfuzita <thaisfuzita@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 19:08:18 by thaisfuzita       #+#    #+#             */
-/*   Updated: 2026/07/09 15:08:08 by thaisfuzita      ###   ########.fr       */
+/*   Updated: 2026/07/09 22:43:49 by thaisfuzita      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,35 +36,6 @@ static int	parse_flags(int argc, char **argv, t_bench *bm)
 		i++;
 	}
 	return (i);
-}
-
-int	*parse_numbers(int argc, char **argv, int *count, t_bench *bm)
-{
-	int		*list;
-	int		flags;
-	char	*str_args;
-	char	**args;
-
-	str_args = join_args(argc, argv);
-	args = split_args(str_args);
-	free(str_args);
-	argc = items_num(args);
-	flags = parse_flags(argc, args, bm);
-	if (argc - flags <= 0)
-	{
-		free_matrix(args);
-		*count = 0;
-		return (NULL);
-	}
-	list = parse_and_validate(argc, args, flags);
-	free_matrix(args);
-	if (!list)
-	{
-		*count = -1;
-		return (NULL);
-	}
-	*count = argc - flags;
-	return (list);
 }
 
 static int	*parse_and_validate(int argc, char **args, int index)
@@ -112,4 +83,33 @@ static char	*join_args(int argc, char **argv)
 		i++;
 	}
 	return (str);
+}
+
+int	*parse_numbers(int argc, char **argv, int *count, t_bench *bm)
+{
+	int		*list;
+	int		flags;
+	char	*str_args;
+	char	**args;
+
+	str_args = join_args(argc, argv);
+	args = split_args(str_args);
+	free(str_args);
+	argc = items_num(args);
+	flags = parse_flags(argc, args, bm);
+	if (argc - flags <= 0)
+	{
+		free_matrix(args);
+		*count = 0;
+		return (NULL);
+	}
+	list = parse_and_validate(argc, args, flags);
+	free_matrix(args);
+	if (!list)
+	{
+		*count = -1;
+		return (NULL);
+	}
+	*count = argc - flags;
+	return (list);
 }

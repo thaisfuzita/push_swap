@@ -3,7 +3,9 @@ NAME = push_swap
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = swap.c rotate.c r_rotate.c push.c
+SRCS = swap.c rotate.c r_rotate.c push.c main.c check_input.c \
+benchmark.c errors_n_free.c decide_ordenation.c parser.c parser_utils.c \
+simple.c medium.c medium_utils.c complex.c
 
 OBJS = $(SRCS:.c=.o)
 

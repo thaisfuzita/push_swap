@@ -6,8 +6,13 @@
 /*   By: thaisfuzita <thaisfuzita@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 17:31:45 by thaisfuzita       #+#    #+#             */
-/*   Updated: 2026/07/09 17:31:47 by thaisfuzita      ###   ########.fr       */
+/*   Updated: 2026/07/09 22:58:54 by thaisfuzita      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void complex()
+{
+    write(2, "Complex\n", 8);
+}

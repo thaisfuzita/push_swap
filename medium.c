@@ -6,7 +6,7 @@
 /*   By: thaisfuzita <thaisfuzita@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 17:31:20 by thaisfuzita       #+#    #+#             */
-/*   Updated: 2026/07/09 21:49:39 by thaisfuzita      ###   ########.fr       */
+/*   Updated: 2026/07/09 22:36:09 by thaisfuzita      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ void    medium(t_stack *a, t_stack *b, t_bench *bm)
     int max;
     int min;
     int range;
+    int total;
 
     chunk_limits(a, &min, &max);
     chunk = ft_sqrt(a->size);
@@ -90,4 +91,6 @@ void    medium(t_stack *a, t_stack *b, t_bench *bm)
     order_chunk(a, b, bm, chunk);
     while (b->size != 0)
         ft_pa(a, b, bm);
+    total = bm->total_ops;
+    ft_printf("total: %i\n", total);
 }

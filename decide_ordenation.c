@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   decide_ordenation.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/07 15:57:32 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/10 21:17:03 by marvin           ###   ########.fr       */
+/*   Updated: 2026/07/11 13:38:30 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	is_ordered(float disorder)
 static void	adaptive(t_stack *a, t_stack *b, t_bench *bm, float disorder)
 {
 	if (disorder < 0.2)
-		simple();
+		simple(a, b, bm);
 	else if (disorder >= 0.2 && disorder < 0.5)
 		medium(a, b, bm);
 	else
@@ -37,7 +37,7 @@ static void	exec_mode(t_stack *a, t_stack *b, t_bench *bm, float disorder)
 		return ;
 	mode = bm->strategy;
 	if (mode == 1)
-		simple();
+		simple(a, b, bm);
 	else if (mode == 2)
 		medium(a, b, bm);
 	else if (mode == 3)

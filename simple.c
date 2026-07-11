@@ -6,13 +6,13 @@
 /*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 18:11:26 by hrique            #+#    #+#             */
-/*   Updated: 2026/07/11 13:18:45 by hrique           ###   ########.fr       */
+/*   Updated: 2026/07/11 13:52:59 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	count_distance(t_node *top, t_node *min_node)
+static int	count_distance(t_node *top, t_node *min_node)
 {
 	int		moves;
 	t_node	*temp;
@@ -27,7 +27,7 @@ int	count_distance(t_node *top, t_node *min_node)
 	return (moves);
 }
 
-t_node	*find_min(t_stack *a)
+static t_node	*find_min(t_stack *a)
 {
 	t_node	*temp;
 	t_node	*min_node;
@@ -47,45 +47,39 @@ t_node	*find_min(t_stack *a)
 	return (min_node);
 }
 
-t_node	*simple_order(t_stack *a, t_stack *b)
+static void	simple_order(t_stack *a, t_stack *b, t_bench *bm)
 {
 	int		i;
 	int 	moves;
 	t_node	*min_node;
 
 	if (!a || a->size <= 1)
-		return (a->top);
+		return ;
 	i = 0;
-	min_node = find_min(a, sorted);
+	min_node = find_min(a);
 	moves = count_distance(a->top, min_node);
 	if (moves < (a->size - moves))
 		while (i < moves)
 		{
-			ft_ra(a);
+			ft_ra(a, bm);
 			i++;
 		}
 	else
 		while (i < (a->size - moves))
 		{
-			ft_r_ra(a);
+			ft_r_ra(a, bm);
 			i++;
 		}
 	if (a->top == min_node)
-		ft_pb(a, b);
-	return (min_node);
+		ft_pb(a, b, bm);
 }
 
-void	selection_sort(t_stack *a, t_stack *b)
+void	selection_sort(t_stack *a, t_stack *b, t_bench *bm)
 {
-	t_node	*sorted;
-
 	if (!a || a->size <= 1)
-		return (a->top);
-	sorted = NULL;
+		return ;
 	while (a->size > 1)
-	{
-		sorted = simple_order(a, b);
-	}
+		simple_order(a, b, bm);
 	while (b->size > 0)
-		ft_pa(a, b);
+		ft_pa(a, b, bm);
 }

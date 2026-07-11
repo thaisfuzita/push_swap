@@ -3,34 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjulya-c <tjulya-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thaisfuzita <thaisfuzita@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 19:08:18 by thaisfuzita       #+#    #+#             */
-/*   Updated: 2026/07/07 18:12:17 by tjulya-c         ###   ########.fr       */
+/*   Updated: 2026/07/09 22:43:49 by thaisfuzita      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	parse_flags(int argc, char **argv, t_bench *bench)
+static int	parse_flags(int argc, char **argv, t_bench *bm)
 {
 	int	i;
 
 	i = 0;
 	while (i < argc && i < 2)
 	{
-		if (is_strat_flag(argv[i]) && bench->strategy != EMPTY)
+		if (is_strat_flag(argv[i]) && bm->strategy != EMPTY)
 			return (i);
 		if (ft_strncmp(argv[i], "--bench", 7) == 0)
-			bench->b_activate = 1;
+			bm->b_activate = 1;
 		else if (ft_strncmp(argv[i], "--simple", 8) == 0)
-			bench->strategy = SIMPLE;
+			bm->strategy = SIMPLE;
 		else if (ft_strncmp(argv[i], "--medium", 8) == 0)
-			bench->strategy = MEDIUM;
+			bm->strategy = MEDIUM;
 		else if (ft_strncmp(argv[i], "--complex", 9) == 0)
-			bench->strategy = COMPLEX;
+			bm->strategy = COMPLEX;
 		else if (ft_strncmp(argv[i], "--adaptive", 10) == 0)
-			bench->strategy = ADAPTIVE;
+			bm->strategy = ADAPTIVE;
 		else
 			return (i);
 		i++;
@@ -38,36 +38,7 @@ int	parse_flags(int argc, char **argv, t_bench *bench)
 	return (i);
 }
 
-int	*parse_numbers(int argc, char **argv, int *count, t_bench *bench)
-{
-	int		*list;
-	int		flags;
-	char	*str_args;
-	char	**args;
-
-	str_args = join_args(argc, argv);
-	args = split_args(str_args);
-	free(str_args);
-	argc = items_num(args);
-	flags = parse_flags(argc, args, bench);
-	if (argc - flags <= 0)
-	{
-		free_matrix(args);
-		*count = 0;
-		return (NULL);
-	}
-	list = parse_and_validate(argc, args, flags);
-	free_matrix(args);
-	if (!list)
-	{
-		*count = -1;
-		return (NULL);
-	}
-	*count = argc - flags;
-	return (list);
-}
-
-int	*parse_and_validate(int argc, char **args, int index)
+static int	*parse_and_validate(int argc, char **args, int index)
 {
 	int		*list;
 	int		i;
@@ -93,7 +64,7 @@ int	*parse_and_validate(int argc, char **args, int index)
 	return (list);
 }
 
-char	*join_args(int argc, char **argv)
+static char	*join_args(int argc, char **argv)
 {
 	int		i;
 	char	*str;
@@ -112,4 +83,33 @@ char	*join_args(int argc, char **argv)
 		i++;
 	}
 	return (str);
+}
+
+int	*parse_numbers(int argc, char **argv, int *count, t_bench *bm)
+{
+	int		*list;
+	int		flags;
+	char	*str_args;
+	char	**args;
+
+	str_args = join_args(argc, argv);
+	args = split_args(str_args);
+	free(str_args);
+	argc = items_num(args);
+	flags = parse_flags(argc, args, bm);
+	if (argc - flags <= 0)
+	{
+		free_matrix(args);
+		*count = 0;
+		return (NULL);
+	}
+	list = parse_and_validate(argc, args, flags);
+	free_matrix(args);
+	if (!list)
+	{
+		*count = -1;
+		return (NULL);
+	}
+	*count = argc - flags;
+	return (list);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 13:22:37 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/09 13:25:47 by hrique           ###   ########.fr       */
+/*   Updated: 2026/07/10 21:40:35 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ static void	ft_rotate(t_stack *x)
 	old_top->next = NULL;
 	x->top = new_top;
 	x->bottom = old_top;
-	
 }
 
 void	ft_ra(t_stack *a, t_bench *benchmark)

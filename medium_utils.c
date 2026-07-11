@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   medium_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thaisfuzita <thaisfuzita@student.42.fr>    +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 21:13:41 by thaisfuzita       #+#    #+#             */
-/*   Updated: 2026/07/10 00:06:18 by thaisfuzita      ###   ########.fr       */
+/*   Updated: 2026/07/10 22:12:27 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void chunk_limits(t_stack *a, int *min, int *max)
 {
 	t_node 	*nd;
 
-	nd = a->bottom;
+	nd = a->top;
     *min = nd->value;
     *max = nd->value;
 	while (nd != NULL)
@@ -53,7 +53,7 @@ void    set_chunk(t_stack *a, int min, int range, int chunk)
     limit = range;
     while (i < chunk)
     {
-        nd = a->bottom;
+        nd = a->top;
         while (nd != NULL)
         {
             if (i + 1 == chunk && nd->value >= min)
@@ -67,3 +67,5 @@ void    set_chunk(t_stack *a, int min, int range, int chunk)
         i++;
     }
 }
+
+

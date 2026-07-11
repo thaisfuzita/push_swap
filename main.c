@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thaisfuzita <thaisfuzita@student.42.fr>    +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 14:31:23 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/09 22:48:14 by thaisfuzita      ###   ########.fr       */
+/*   Updated: 2026/07/10 21:17:03 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,8 @@ static int	populate(t_stack *a, int *numbers, int count)
 		}
 		else
 		{
-			a->top->next = nd;
-			nd->prev = a->top;
+			a->top->prev = nd;
+			nd->next = a->top;
 			a->top = nd;
 		}
 		a->size++;

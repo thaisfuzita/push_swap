@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors_n_free.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thaisfuzita <thaisfuzita@student.42.fr>    +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 17:51:52 by thaisfuzita       #+#    #+#             */
-/*   Updated: 2026/07/09 17:00:34 by thaisfuzita      ###   ########.fr       */
+/*   Updated: 2026/07/10 21:17:03 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void free_all(t_stack *a, t_stack *b, int *nums)
 	while (i > 0)
 	{
 		nd = a->bottom;
-		a->bottom = nd->next;
+		a->bottom = nd->prev;
 		free(nd);
 		i--;
 	}
@@ -43,7 +43,7 @@ void free_all(t_stack *a, t_stack *b, int *nums)
 	while (j > 0)
 	{
 		nd = b->bottom;
-		b->bottom = nd->next;
+		b->bottom = nd->prev;
 		free(nd);
 		j--;
 	}

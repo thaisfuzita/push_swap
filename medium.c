@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   medium.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thaisfuzita <thaisfuzita@student.42.fr>    +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 17:31:20 by thaisfuzita       #+#    #+#             */
-/*   Updated: 2026/07/09 22:36:09 by thaisfuzita      ###   ########.fr       */
+/*   Updated: 2026/07/10 22:45:39 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int chunk_size(t_stack *a, int index)
     t_node *nd;
 
     size = 0;
-    nd = a->bottom;
+    nd = a->top;
     while (nd != NULL)
     {
         if (nd->index == index)
@@ -27,6 +27,32 @@ static int chunk_size(t_stack *a, int index)
     }
     return (size);
 }
+
+static void	shortest_rotation(t_stack *x, t_bench *bm, int i, 
+		void (*rot)(t_stack *, t_bench *), void (*r_rot)(t_stack *, t_bench *))
+{
+	int	place;
+	t_node	*nd;
+	
+	place = 0;
+	nd = x->top;
+	while (nd->index != i)
+    {
+        nd = nd->next;
+        place++;
+    }
+    if (place > x->size / 2)
+	{
+        while (nd != x->top)
+            r_rot(x, bm);
+	}
+    else
+	{
+        while (nd != x->top)
+            rot(x, bm);
+	}
+}
+
 static void    insert_in_order(t_stack *a, t_stack *b, t_bench *bm, int value)
 {
     int rotates;
@@ -35,10 +61,10 @@ static void    insert_in_order(t_stack *a, t_stack *b, t_bench *bm, int value)
     rotates = 0;
     b_nd = b->top;
     while (b_nd != NULL && value < b_nd->value && rotates < b->size)
-    {
-        ft_rb(b, bm);
-        rotates++;   
-        b_nd = b->top;
+    {   
+		ft_rb(b, bm);
+        rotates++;
+		b_nd = b->top;
     }
     ft_pb(a, b, bm);
     while (rotates != 0)
@@ -69,8 +95,7 @@ static void    order_chunk(t_stack *a, t_stack *b, t_bench *bm, int chunk)
                 j++;
             }
             else
-                ft_ra(a, bm);
-            nd = a->top;
+				shortest_rotation(a, bm, i, ft_ra, ft_r_ra);
         }
         i++;
     }

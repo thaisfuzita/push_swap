@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   decide_ordenation.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thaisfuzita <thaisfuzita@student.42.fr>    +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/07 15:57:32 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/09 22:59:23 by thaisfuzita      ###   ########.fr       */
+/*   Updated: 2026/07/10 21:17:03 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static float	ft_check_disorder(t_stack *a)
 
 	mistakes = 0;
 	total_pairs = 0;
-	nd = a->bottom;
+	nd = a->top;
 	nx = nd->next;
 	while (nd->next != NULL)
 	{

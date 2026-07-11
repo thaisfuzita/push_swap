@@ -6,7 +6,7 @@
 /*   By: riks <riks@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 18:11:26 by hrique            #+#    #+#             */
-/*   Updated: 2026/07/11 15:32:45 by riks             ###   ########.fr       */
+/*   Updated: 2026/07/11 17:02:05 by riks             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,19 +60,13 @@ static void	simple_order(t_stack *a, t_stack *b, t_bench *bm)
 	moves = count_distance(a->top, min_node);
 	if (moves < (a->size - moves))
 	{
-		while (i < moves)
-		{
+		while (i++ < moves)
 			ft_ra(a, bm);
-			i++;
-		}
 	}
 	else
 	{
-		while (i < (a->size - moves))
-		{
+		while (i++ < (a->size - moves))
 			ft_r_ra(a, bm);
-			i++;
-		}
 	}
 	if (a->top == min_node)
 		ft_pb(a, b, bm);

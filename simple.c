@@ -6,39 +6,11 @@
 /*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 18:11:26 by hrique            #+#    #+#             */
-/*   Updated: 2026/07/10 23:39:53 by hrique           ###   ########.fr       */
+/*   Updated: 2026/07/11 13:09:48 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	index_normalize(t_stack	*a)
-{
-	t_node	*node_a;
-	t_node	*node_b;
-	t_node	*min_node;
-	int		count;
-
-	if (a->size <= 1)
-		return ;
-	node_a = a->top;
-	node_b = node_a;
-	while (node_a)
-	{
-		count = 0;
-		while (node_b)
-		{
-			if (node_a->value > node_b->value)
-				count++;
-			node_b = node_b->next;
-		}
-		node_a->index = count;
-		if (count == 0)
-			min_node = node_a;
-		node_a = node_a->next;
-		node_b = a->top;
-	}
-}
 
 int	count_distance(t_node *top, t_node *min_node)
 {
@@ -55,27 +27,6 @@ int	count_distance(t_node *top, t_node *min_node)
 	return (moves);
 }
 
-void	simple_order(t_stack *a)
-{
-	int	i;
-	int moves;
-
-	i = 0
-	moves = count_distance(a->top, min_node);
-	if (moves < (size - moves))
-		while (i < moves)
-		{
-			ft_ra(a);
-			i++;
-		}
-	else
-		while (i < size - moves)
-		{
-			ft_r_ra(a);
-			i++;
-		}
-}
-
 t_node	*find_min(t_stack *a)
 {
 	t_node	*temp;
@@ -88,8 +39,53 @@ t_node	*find_min(t_stack *a)
 	while (temp)
 	{
 		if (temp->value < min_node->value)
+		{
 			min_node = temp;
-		temp =	temp->next; 
+		}
+		temp =	temp->next;
 	}
 	return (min_node);
+}
+
+t_node	*simple_order(t_stack *a, t_stack *b)
+{
+	int		i;
+	int 	moves;
+	t_node	*min_node;
+
+	if (!a || a->size <= 1)
+		return (a->top);
+	i = 0;
+	min_node = find_min(a, sorted);
+	moves = count_distance(a->top, min_node);
+	if (moves < (a->size - moves))
+		while (i < moves)
+		{
+			ft_ra(a);
+			i++;
+		}
+	else
+		while (i < (a->size - moves))
+		{
+			ft_r_ra(a);
+			i++;
+		}
+	if (a->top == min_node)
+		ft_pb(a, b);
+	return (min_node);
+}
+
+void	selection_sort(t_stack *a, t_stack *b)
+{
+	t_node	*sorted;
+
+	if (!a || a->size <= 1)
+		return (a->top);
+	sorted = NULL;
+	while (a->size > 1)
+	{
+		sorted = simple_order(a, b);
+	}
+	while (b->size > 0)
+		ft_pa(a, b);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   medium_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: thaisfuzita <thaisfuzita@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 21:13:41 by thaisfuzita       #+#    #+#             */
-/*   Updated: 2026/07/10 22:12:27 by marvin           ###   ########.fr       */
+/*   Updated: 2026/07/12 10:35:01 by thaisfuzita      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,46 +26,24 @@ int	ft_sqrt(int nb)
 	return ((int)(i - 1));
 }
 
-void chunk_limits(t_stack *a, int *min, int *max)
+void	index_normalize(t_stack *a)
 {
-	t_node 	*nd;
-
-	nd = a->top;
-    *min = nd->value;
-    *max = nd->value;
-	while (nd != NULL)
-	{
-		if(nd->value > *max)
-            *max = nd->value;
-        if (nd->value < *min)
-            *min = nd->value;
-		nd = nd->next;
-    }
-}
-
-void    set_chunk(t_stack *a, int min, int range, int chunk)
-{
-    int i;
-    int limit;
     t_node *nd;
-    
-    i = 0;
-    limit = range;
-    while (i < chunk)
-    {
-        nd = a->top;
-        while (nd != NULL)
+    t_node *cmp;
+    int count_i;
+
+    nd = a->top;
+    while (nd != NULL)
+    {        
+        count_i = 0;
+        cmp = a->top;
+        while (cmp != NULL)
         {
-            if (i + 1 == chunk && nd->value >= min)
-                nd->index = i;
-            else if (nd->value >= min && nd->value < limit)
-                nd->index = i;
-            nd = nd->next;    
+            if (cmp->value < nd->value)
+                count_i++;
+            cmp = cmp->prev;
         }
-        min = limit;
-        limit = limit + range;
-        i++;
+        nd->index = count_i;
+        nd = nd->prev;
     }
 }
-
-

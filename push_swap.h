@@ -6,7 +6,7 @@
 /*   By: thaisfuzita <thaisfuzita@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 12:35:56 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/09 22:59:03 by thaisfuzita      ###   ########.fr       */
+/*   Updated: 2026/07/12 10:48:15 by thaisfuzita      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,15 +82,14 @@ int		items_num(char **list);
 int		is_strat_flag(char *str);
 long	convert_num(char *str);
 void    medium(t_stack *a, t_stack *b, t_bench *bm);
-int	ft_sqrt(int nb);
-void chunk_limits(t_stack *a, int *min, int *max);
-void    set_chunk(t_stack *a, int min, int range, int chunk);
-void free_all(t_stack *a, t_stack *b, int *nums);
+int		ft_sqrt(int nb);
+void 	free_all(t_stack *a, t_stack *b, int *nums);
 void	check_error(int count);
 void	ordernation(t_stack *a, t_stack *b, t_bench *bm);
 void	init_bench(t_bench *bm);
-void complex();
-void simple();
+void 	complex();
+void 	simple();
 char	**split_args(char *str);
+void	index_normalize(t_stack *a);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   benchmark.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thaisfuzita <thaisfuzita@student.42.fr>    +#+  +:+       +#+        */
+/*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 17:31:38 by thaisfuzita       #+#    #+#             */
-/*   Updated: 2026/07/09 22:44:44 by thaisfuzita      ###   ########.fr       */
+/*   Updated: 2026/07/11 19:07:45 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,10 @@ void	init_bench(t_bench *bm)
 	bm->rra = 0;
 	bm->rrb = 0;
 	bm->rrr = 0;
+}
+
+void	print_op(char *op, t_bench *bm)
+{
+	if (bm->b_activate == 0)
+		ft_printf("%s\n", op);
 }

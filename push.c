@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thaisfuzita <thaisfuzita@student.42.fr>    +#+  +:+       +#+        */
+/*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 13:21:20 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/10 00:01:30 by thaisfuzita      ###   ########.fr       */
+/*   Updated: 2026/07/11 18:50:40 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ static void	change_top_bot(t_stack *x, t_node *new)
 
 static void	ft_push(t_stack *src, t_stack *dst)
 {
-	t_node  *move;
-	
+	t_node	*move;
+
 	if (src->size == 0)
-		return;
+		return ;
 	move = src->top;
 	src->top = move->next;
 	if (src->top)
@@ -46,14 +46,20 @@ static void	ft_push(t_stack *src, t_stack *dst)
 
 void	ft_pa(t_stack *a, t_stack *b, t_bench *benchmark)
 {
+	if (b->size == 0)
+		return ;
 	ft_push(b, a);
+	print_op("pa", benchmark);
 	benchmark->pa++;
 	benchmark->total_ops++;
 }
 
 void	ft_pb(t_stack *a, t_stack *b, t_bench *benchmark)
 {
+	if (a->size == 0)
+		return ;
 	ft_push(a, b);
+	print_op("pb", benchmark);
 	benchmark->pb++;
 	benchmark->total_ops++;
 }

@@ -6,7 +6,7 @@
 /*   By: thaisfuzita <thaisfuzita@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 17:31:20 by thaisfuzita       #+#    #+#             */
-/*   Updated: 2026/07/12 10:49:48 by thaisfuzita      ###   ########.fr       */
+/*   Updated: 2026/07/12 11:02:21 by thaisfuzita      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	shortest_rotation(t_stack *x, t_bench *bm, int steps,
             steps--;
         }
 	}
-    else
+	if (steps > x->size / 2)
 	{
         while (steps > 0)
         {
@@ -86,7 +86,7 @@ static int  find_max(t_stack *b)
 	return (max_pos);
 }
 
-void    medium(t_stack *a, t_stack *b, t_bench *bm)
+void	medium(t_stack *a, t_stack *b, t_bench *bm)
 {
     int group_size = ft_sqrt(a->size);
     int pos;

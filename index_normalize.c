@@ -1,18 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   complex.c                                          :+:      :+:    :+:   */
+/*   index_normalize.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/09 17:31:45 by thaisfuzita       #+#    #+#             */
-/*   Updated: 2026/07/11 19:08:03 by hrique           ###   ########.fr       */
+/*   Created: 2026/07/11 11:10:32 by hrique            #+#    #+#             */
+/*   Updated: 2026/07/11 11:13:26 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	complex()
+void	index_normalize(t_stack	*a)
 {
-    write(2, "Complex\n", 8);
+	t_node	*node_a;
+	t_node	*node_b;
+	t_node	*min_node;
+	int		count;
+
+	if (a->size <= 1)
+		return ;
+	node_a = a->top;
+	node_b = node_a;
+	while (node_a)
+	{
+		count = 0;
+		while (node_b)
+		{
+			if (node_a->value > node_b->value)
+				count++;
+			node_b = node_b->next;
+		}
+		node_a->index = count;
+		if (count == 0)
+			min_node = node_a;
+		node_a = node_a->next;
+		node_b = a->top;
+	}
 }

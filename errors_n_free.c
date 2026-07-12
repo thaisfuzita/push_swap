@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors_n_free.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 17:51:52 by thaisfuzita       #+#    #+#             */
-/*   Updated: 2026/07/10 21:17:03 by marvin           ###   ########.fr       */
+/*   Updated: 2026/07/11 19:08:22 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ void	free_matrix(char **list)
 	free(list);
 }
 
-void free_all(t_stack *a, t_stack *b, int *nums)
+void	free_all(t_stack *a, t_stack *b, int *nums)
 {
 	int	i;
 	int	j;
-	t_node *nd;
-	
+	t_node	*nd;
+
 	i = a->size;
 	while (i > 0)
 	{
@@ -49,8 +49,9 @@ void free_all(t_stack *a, t_stack *b, int *nums)
 	}
 	free(nums);
 }
+
 void	check_error(int count)
 {
 	if (count == -1)
-		write (2, "Error\n", 6);
+		ft_printf("%s\n", "Error");
 }

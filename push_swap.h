@@ -6,7 +6,7 @@
 /*   By: thaisfuzita <thaisfuzita@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 12:35:56 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/12 10:48:15 by thaisfuzita      ###   ########.fr       */
+/*   Updated: 2026/07/12 11:02:50 by thaisfuzita      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	ft_rr(t_stack *a, t_stack *b, t_bench *benchmark);
 void	ft_sa(t_stack *a, t_bench *benchmark);
 void	ft_sb(t_stack *b, t_bench *benchmark);
 void	ft_ss(t_stack *a, t_stack *b, t_bench *benchmark);
-int 	main(int argc, char **argv);
+int		main(int argc, char **argv);
 int		is_valid_number(char *str);
 int		is_duplicate(int *list, int num, int i);
 int		is_overflow(long num);
@@ -91,5 +91,6 @@ void 	complex();
 void 	simple();
 char	**split_args(char *str);
 void	index_normalize(t_stack *a);
+
 
 #endif

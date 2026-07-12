@@ -6,7 +6,7 @@
 /*   By: thaisfuzita <thaisfuzita@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 12:35:56 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/12 11:02:50 by thaisfuzita      ###   ########.fr       */
+/*   Updated: 2026/07/12 11:06:26 by thaisfuzita      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,10 +87,11 @@ void 	free_all(t_stack *a, t_stack *b, int *nums);
 void	check_error(int count);
 void	ordernation(t_stack *a, t_stack *b, t_bench *bm);
 void	init_bench(t_bench *bm);
-void 	complex();
-void 	simple();
+void 	complex(void);
+void	simple(t_stack *a, t_stack *b, t_bench *bm);
 char	**split_args(char *str);
 void	index_normalize(t_stack *a);
+void	print_op(char *op, t_bench *bm);
 
 
 #endif

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   complex.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
+/*   By: thaisfuzita <thaisfuzita@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 17:31:45 by thaisfuzita       #+#    #+#             */
-/*   Updated: 2026/07/11 19:08:03 by hrique           ###   ########.fr       */
+/*   Updated: 2026/07/12 11:06:33 by thaisfuzita      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	complex()
+void	complex(void)
 {
     write(2, "Complex\n", 8);
 }

@@ -6,7 +6,7 @@
 /*   By: thaisfuzita <thaisfuzita@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 21:13:41 by thaisfuzita       #+#    #+#             */
-/*   Updated: 2026/07/12 11:24:54 by thaisfuzita      ###   ########.fr       */
+/*   Updated: 2026/07/12 12:01:59 by thaisfuzita      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,6 @@ void	index_normalize(t_stack *a)
             cmp = cmp->next;
         }
         nd->index = count_i;
-        nd = nd->prev;
+        nd = nd->next;
     }
 }

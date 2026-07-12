@@ -6,7 +6,7 @@
 /*   By: thaisfuzita <thaisfuzita@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 17:31:20 by thaisfuzita       #+#    #+#             */
-/*   Updated: 2026/07/12 11:24:26 by thaisfuzita      ###   ########.fr       */
+/*   Updated: 2026/07/12 12:20:27 by thaisfuzita      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,9 +90,8 @@ void	medium(t_stack *a, t_stack *b, t_bench *bm)
 {
     int group_size = ft_sqrt(a->size);
     int pos;
-    int total;
+    /*int total;*/
 
-    ft_printf("DEBUG group_size=%d\n", group_size);
 	index_normalize(a);
 	fill_b(a, b, bm, group_size);
 	while (b->size != 0)
@@ -101,6 +100,6 @@ void	medium(t_stack *a, t_stack *b, t_bench *bm)
 		shortest_rotation(b, bm, pos, ft_rb, ft_r_rb);
 		ft_pa(a, b, bm);
     }
-    total = bm->total_ops;
-    ft_printf("%i\n", total);
+    /*total = bm->total_ops;
+    ft_printf("%i\n", total);*/
 }

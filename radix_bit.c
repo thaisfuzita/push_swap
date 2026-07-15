@@ -1,34 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_char.c                                       :+:      :+:    :+:   */
+/*   radix_bit.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: riks <riks@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/30 17:28:58 by hesantan          #+#    #+#             */
-/*   Updated: 2026/07/12 23:35:58 by riks             ###   ########.fr       */
+/*   Created: 2026/07/14 23:43:56 by riks              #+#    #+#             */
+/*   Updated: 2026/07/14 23:44:49 by riks             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	print_char(char c)
+void    sort_by_bit(t_stack *a, t_stack *b, int bit)
 {
-	write(1, &c, 1);
-	return (1);
-}
-
-int	print_str(char *s)
-{
-	int		i;
-
-	i = 0;
-	if (!s)
-	{
-		write (1, "(null)", 6);
-		return (6);
-	}
-	while (s[i])
-		i += print_char(s[i]);
-	return (i);
+    ...
 }

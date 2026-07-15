@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   index_normalize.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
+/*   By: riks <riks@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/11 11:10:32 by hrique            #+#    #+#             */
-/*   Updated: 2026/07/11 11:13:26 by hrique           ###   ########.fr       */
+/*   Updated: 2026/07/15 00:42:00 by riks             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ void	index_normalize(t_stack	*a)
 	if (a->size <= 1)
 		return ;
 	node_a = a->top;
-	node_b = node_a;
 	while (node_a)
 	{
 		count = 0;
+		node_b = a->top;
 		while (node_b)
 		{
 			if (node_a->value > node_b->value)
@@ -36,6 +36,5 @@ void	index_normalize(t_stack	*a)
 		if (count == 0)
 			min_node = node_a;
 		node_a = node_a->next;
-		node_b = a->top;
 	}
 }

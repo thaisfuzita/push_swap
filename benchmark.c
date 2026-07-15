@@ -6,7 +6,7 @@
 /*   By: hesantan <hesantan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 17:31:38 by thaisfuzita       #+#    #+#             */
-/*   Updated: 2026/07/15 16:01:43 by hesantan         ###   ########.fr       */
+/*   Updated: 2026/07/15 16:03:42 by hesantan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	print_op(char *op, t_bench *bm)
 		ft_printf("%s\n", op);
 }
 
-void	print_bench(t_bench bm)
-{
+// void	print_bench(t_bench bm)
+// {
 	
-}
+// }

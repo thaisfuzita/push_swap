@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   medium.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thaisfuzita <thaisfuzita@student.42.fr>    +#+  +:+       +#+        */
+/*   By: hesantan <hesantan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 17:31:20 by thaisfuzita       #+#    #+#             */
-/*   Updated: 2026/07/12 11:24:26 by thaisfuzita      ###   ########.fr       */
+/*   Updated: 2026/07/15 15:31:41 by hesantan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,7 @@ void	medium(t_stack *a, t_stack *b, t_bench *bm)
     ft_printf("DEBUG group_size=%d\n", group_size);
 	index_normalize(a);
 	fill_b(a, b, bm, group_size);
+	print_both(a, b);
 	while (b->size != 0)
     {
 		pos = find_max(b);
@@ -102,5 +103,5 @@ void	medium(t_stack *a, t_stack *b, t_bench *bm)
 		ft_pa(a, b, bm);
     }
     total = bm->total_ops;
-    ft_printf("%i\n", total);
+	print_both(a, b);
 }

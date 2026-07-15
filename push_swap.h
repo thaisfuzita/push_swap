@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: riks <riks@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: hesantan <hesantan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 12:35:56 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/15 00:45:56 by riks             ###   ########.fr       */
+/*   Updated: 2026/07/15 15:28:22 by hesantan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,7 @@ void	simple(t_stack *a, t_stack *b, t_bench *bm);
 char	**split_args(char *str);
 void	index_normalize(t_stack *a);
 void	print_op(char *op, t_bench *bm);
-
+void	print_stack(t_stack *s, char *name);
+void	print_both(t_stack *a, t_stack *b);
 
 #endif

@@ -37,7 +37,7 @@ void	print_op(char *op, t_bench *bm)
 		ft_printf("%s\n", op);
 }
 
-void	print_bench(t_bench bm)
-{
+// void	print_bench(t_bench bm)
+// {
 	
-}
+// }

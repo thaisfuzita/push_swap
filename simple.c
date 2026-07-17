@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simple.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: riks <riks@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 18:11:26 by hrique            #+#    #+#             */
-/*   Updated: 2026/07/11 17:02:05 by riks             ###   ########.fr       */
+/*   Updated: 2026/07/17 12:52:09 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,10 +78,12 @@ void	simple(t_stack *a, t_stack *b, t_bench *bm)
 
 	if (!a || a->size <= 1)
 		return ;
+	print_both(a, b);
 	while (a->size > 1)
 		simple_order(a, b, bm);
 	while (b->size > 0)
 		ft_pa(a, b, bm);
 	total = bm->total_ops;
 	ft_printf("total: %i\n", total);
+	print_both(a, b);
 }

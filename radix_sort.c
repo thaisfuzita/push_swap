@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_char.c                                       :+:      :+:    :+:   */
+/*   radix_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hesantan <hesantan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/30 17:28:58 by hesantan          #+#    #+#             */
-/*   Updated: 2026/07/17 12:52:19 by marvin           ###   ########.fr       */
+/*   Created: 2026/07/14 23:40:25 by riks              #+#    #+#             */
+/*   Updated: 2026/07/15 17:21:04 by hesantan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	print_char(char c)
+int	get_max_bit(int size)
 {
-	write(1, &c, 1);
-	return (1);
+	int	bits;
+
+	bits = 0;
+	while ((1 << bits) < size)
+		bits = bits + 1;
+	return (bits);
 }
 
-int	print_str(char *s)
+int get_bit(int value, int bit)
 {
-	int		i;
+	return (value >> bit) & 1;
+}
 
-	i = 0;
-	if (!s)
-	{
-		write (1, "(null)", 6);
-		return (6);
-	}
-	while (s[i])
-		i += print_char(s[i]);
-	return (i);
+void	radix_sort(t_stack *a, t_stack *b)
+{
+	...
 }

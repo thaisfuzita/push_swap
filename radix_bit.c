@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_char.c                                       :+:      :+:    :+:   */
+/*   radix_bit.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hesantan <hesantan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/30 17:28:58 by hesantan          #+#    #+#             */
-/*   Updated: 2026/07/17 12:52:19 by marvin           ###   ########.fr       */
+/*   Created: 2026/07/14 23:43:56 by riks              #+#    #+#             */
+/*   Updated: 2026/07/15 17:15:22 by hesantan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int	print_char(char c)
+void    sort_by_bit(t_stack *a, t_stack *b, int bit)
 {
-	write(1, &c, 1);
-	return (1);
-}
-
-int	print_str(char *s)
-{
-	int		i;
-
+    int	size;
+	int	i;
+	
+	size = a->size;
 	i = 0;
-	if (!s)
+	while (i < size - 1)
 	{
-		write (1, "(null)", 6);
-		return (6);
+		if (get_bit(a->top->index, bit) == 0)
+			ft_pb(a, b);
+		else
+			ft_ra(a);
 	}
-	while (s[i])
-		i += print_char(s[i]);
-	return (i);
+	while (b->size > 0)
+		ft_pa(a, b);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: riks <riks@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 14:31:23 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/11 15:10:00 by riks             ###   ########.fr       */
+/*   Updated: 2026/07/17 12:50:30 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,6 @@ int	main(int argc, char **argv)
 	if (populate(&a, numbers, count) == 0)
 		ordernation(&a, &b, &bm);
 	free_all(&a, &b, numbers);
+
 	return (0);
 }

@@ -116,8 +116,6 @@ int	main(int argc, char **argv)
 	ft_printf("--- estado inicial ---\n");
 	print_both(a, b);
 
-	/* Edite essa sequencia livremente para testar o que quiser */
-
 	ft_printf("--- exec sa ---\n");
 	ft_sa(a, &bench);
 	print_both(a, b);

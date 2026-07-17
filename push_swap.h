@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 12:35:56 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/17 12:52:01 by marvin           ###   ########.fr       */
+/*   Updated: 2026/07/17 15:28:41 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ void 	free_all(t_stack *a, t_stack *b, int *nums);
 void	check_error(int count);
 void	ordernation(t_stack *a, t_stack *b, t_bench *bm);
 void	init_bench(t_bench *bm);
-void 	complex(void);
+void 	complex(t_stack *a, t_stack *b, t_bench *bm);
 void	simple(t_stack *a, t_stack *b, t_bench *bm);
 char	**split_args(char *str);
 void	index_normalize(t_stack *a);

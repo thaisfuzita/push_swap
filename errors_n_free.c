@@ -53,5 +53,5 @@ void	free_all(t_stack *a, t_stack *b, int *nums)
 void	check_error(int count)
 {
 	if (count == -1)
-		ft_printf("%s\n", "Error");
+		write(2, "Error\n", 6);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hesantan <hesantan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/15 15:07:17 by hesantan          #+#    #+#             */
-/*   Updated: 2026/07/15 15:33:53 by hesantan         ###   ########.fr       */
+/*   Updated: 2026/07/18 16:05:59 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,5 @@ void	print_both(t_stack *a, t_stack *b)
 {
 	print_stack(a, "A");
 	print_stack(b, "B");
-	ft_printf("\n");
+	write(2, "\n", 1);
 }

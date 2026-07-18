@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   decide_ordenation.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/07 15:57:32 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/17 12:49:36 by marvin           ###   ########.fr       */
+/*   Updated: 2026/07/18 11:36:00 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void	adaptive(t_stack *a, t_stack *b, t_bench *bm, float disorder)
 	else if (disorder >= 0.2 && disorder < 0.5)
 		medium(a, b, bm);
 	else
-		complex();
+		complex(a, b, bm);
 }
 
 static void	exec_mode(t_stack *a, t_stack *b, t_bench *bm, float disorder)
@@ -41,7 +41,7 @@ static void	exec_mode(t_stack *a, t_stack *b, t_bench *bm, float disorder)
 	else if (mode == 2)
 		medium(a, b, bm);
 	else if (mode == 3)
-		complex();
+		complex(a, b, bm);
 	else 
 		adaptive(a, b, bm, disorder);
 }
@@ -79,6 +79,6 @@ void	ordernation(t_stack *a, t_stack *b, t_bench *bm)
 	disorder = ft_check_disorder(a);
 	bm->disorder = disorder;
 	exec_mode(a, b, bm, disorder);
-	/*if (bm->b_activate == 1)
-		print_bench(bm);*/
+	if (bm->b_activate == 1)
+		print_bench(bm);
 }

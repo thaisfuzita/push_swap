@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   medium.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 17:31:20 by thaisfuzita       #+#    #+#             */
-/*   Updated: 2026/07/17 12:51:55 by marvin           ###   ########.fr       */
+/*   Updated: 2026/07/17 19:05:10 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,9 +88,10 @@ static int  find_max(t_stack *b)
 
 void	medium(t_stack *a, t_stack *b, t_bench *bm)
 {
-    int group_size = ft_sqrt(a->size);
+    int group_size;
     int pos;
 
+	group_size = ft_sqrt(a->size);
 	index_normalize(a);
 	fill_b(a, b, bm, group_size);
 	print_both(a, b);

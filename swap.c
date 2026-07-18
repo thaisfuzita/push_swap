@@ -50,7 +50,6 @@ void	ft_ss(t_stack *a, t_stack *b, t_bench *benchmark)
 	ft_swap(a);
 	ft_swap(b);
 	print_op("ss", benchmark);
-	benchmark->sa++;
-	benchmark->sb++;
+	benchmark->ss++;
 	benchmark->total_ops++;
 }

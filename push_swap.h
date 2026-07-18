@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 12:35:56 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/17 15:28:41 by marvin           ###   ########.fr       */
+/*   Updated: 2026/07/18 12:45:11 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,5 +94,7 @@ void	index_normalize(t_stack *a);
 void	print_op(char *op, t_bench *bm);
 void	print_stack(t_stack *s, char *name);
 void	print_both(t_stack *a, t_stack *b);
+void	print_bench(t_bench *bm);
+void	bench_write_label(char *name, int val);
 
 #endif

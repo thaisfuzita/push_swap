@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   benchmark.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 17:31:38 by thaisfuzita       #+#    #+#             */
-/*   Updated: 2026/07/17 12:49:18 by marvin           ###   ########.fr       */
+/*   Updated: 2026/07/18 13:16:31 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,14 @@ void	init_bench(t_bench *bm)
 
 void	print_op(char *op, t_bench *bm)
 {
-	if (bm->b_activate == 0)
-		ft_printf("%s\n", op);
+	(void)bm;
+	ft_printf("%s\n", op);
 }
 
-// void	print_bench(t_bench bm)
-// {
-	
-// }
+void	bench_write_label(char *name, int val)
+{
+	ft_putstr_fd(name, 2);
+	ft_putstr_fd(": ", 2);
+	ft_putnbr_fd(val, 2);
+	ft_putstr_fd(" ", 2);
+}

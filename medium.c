@@ -6,7 +6,7 @@
 /*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 17:31:20 by thaisfuzita       #+#    #+#             */
-/*   Updated: 2026/07/17 19:05:10 by hrique           ###   ########.fr       */
+/*   Updated: 2026/07/19 15:07:17 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void	medium(t_stack *a, t_stack *b, t_bench *bm)
     int group_size;
     int pos;
 
-	group_size = ft_sqrt(a->size);
+	group_size = ft_sqrt(a->size) * 3;
 	index_normalize(a);
 	fill_b(a, b, bm, group_size);
 	print_both(a, b);

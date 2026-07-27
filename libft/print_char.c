@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_char.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/30 17:28:58 by hesantan          #+#    #+#             */
-/*   Updated: 2026/07/09 12:00:06 by hrique           ###   ########.fr       */
+/*   Updated: 2026/07/17 12:52:19 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	print_char(char c)
 {
-	write(2, &c, 1);
+	write(1, &c, 1);
 	return (1);
 }
 
@@ -25,7 +25,7 @@ int	print_str(char *s)
 	i = 0;
 	if (!s)
 	{
-		write (2, "(null)", 6);
+		write (1, "(null)", 6);
 		return (6);
 	}
 	while (s[i])

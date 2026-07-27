@@ -6,7 +6,7 @@
 /*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 12:35:56 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/27 16:52:42 by hrique           ###   ########.fr       */
+/*   Updated: 2026/07/27 17:10:07 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,12 +72,11 @@ void	ft_rr(t_stack *a, t_stack *b, t_bench *benchmark);
 void	ft_sa(t_stack *a, t_bench *benchmark);
 void	ft_sb(t_stack *b, t_bench *benchmark);
 void	ft_ss(t_stack *a, t_stack *b, t_bench *benchmark);
-int 	main(int argc, char **argv);
+int		main(int argc, char **argv);
 int		is_valid_number(char *str);
 int		is_duplicate(int *list, int num, int i);
 int		is_overflow(long num);
 void	free_matrix(char **list);
-int		parse_flags(int argc, char **argv, t_bench *bench);
 int		*parse_numbers(int argc, char **argv, int *count, t_bench *bench);
 int		*parse_and_validate(int argc, char **args, int index);
 char	*join_args(int argc, char **argv);

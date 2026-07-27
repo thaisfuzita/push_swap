@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 14:31:23 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/17 12:50:30 by marvin           ###   ########.fr       */
+/*   Updated: 2026/07/27 18:05:13 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int	main(int argc, char **argv)
 	if (!numbers)
 		return (check_error(count), 1);
 	if (count < 2)
-		return (0);
+		return (free(numbers), 0);
 	init_stack(&a);
 	init_stack(&b);
 	if (populate(&a, numbers, count) == 0)

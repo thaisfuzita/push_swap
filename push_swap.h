@@ -6,7 +6,7 @@
 /*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 12:35:56 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/27 17:10:07 by hrique           ###   ########.fr       */
+/*   Updated: 2026/07/27 17:51:14 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,6 @@ int		is_duplicate(int *list, int num, int i);
 int		is_overflow(long num);
 void	free_matrix(char **list);
 int		*parse_numbers(int argc, char **argv, int *count, t_bench *bench);
-int		*parse_and_validate(int argc, char **args, int index);
-char	*join_args(int argc, char **argv);
 int		items_num(char **list);
 int		is_strat_flag(char *str);
 long	convert_num(char *str);

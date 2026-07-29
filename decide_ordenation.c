@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   decide_ordenation.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tjulya-c <tjulya-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/07 15:57:32 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/18 11:36:00 by hrique           ###   ########.fr       */
+/*   Updated: 2026/07/29 14:25:36 by tjulya-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,27 +42,27 @@ static void	exec_mode(t_stack *a, t_stack *b, t_bench *bm, float disorder)
 		medium(a, b, bm);
 	else if (mode == 3)
 		complex(a, b, bm);
-	else 
+	else
 		adaptive(a, b, bm, disorder);
 }
 
 static float	ft_check_disorder(t_stack *a)
 {
-	int	mistakes;
-	int	total_pairs;
-	t_node 	*nd;
+	int		mistakes;
+	int		total_pairs;
+	t_node	*nd;
 	t_node	*nx;
 
 	mistakes = 0;
 	total_pairs = 0;
 	nd = a->top;
-	nx = nd->next;
+	nx = nd->next;shortest_rotation(b, bm, pos, ft_rb, ft_r_rb);
 	while (nd->next != NULL)
 	{
 		while (nx != NULL )
 		{
 			total_pairs++;
-			if(nd->value > nx->value)
+			if (nd->value > nx->value)
 				mistakes++;
 			nx = nx->next;
 		}

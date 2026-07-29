@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   medium_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tjulya-c <tjulya-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/09 21:13:41 by thaisfuzita       #+#    #+#             */
-/*   Updated: 2026/07/19 15:04:29 by hrique           ###   ########.fr       */
+/*   Created: 2026/07/09 21:13:41 by tjulya-c          #+#    #+#             */
+/*   Updated: 2026/07/29 14:26:26 by tjulya-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,22 +28,22 @@ int	ft_sqrt(int nb)
 
 void	index_normalize(t_stack *a)
 {
-    t_node *nd;
-    t_node *cmp;
-    int count_i;
+	t_node	*nd;
+	t_node	*cmp;
+	int		count_i;
 
-    nd = a->top;
-    while (nd != NULL)
-    {        
-        count_i = 0;
-        cmp = a->top;
-        while (cmp != NULL)
-        {
-            if (cmp->value < nd->value)
-                count_i++;
-            cmp = cmp->next;
-        }
-        nd->index = count_i;
-        nd = nd->next;
-    }
+	nd = a->top;
+	while (nd != NULL)
+	{
+		count_i = 0;
+		cmp = a->top;
+		while (cmp != NULL)
+		{
+			if (cmp->value < nd->value)
+				count_i++;
+			cmp = cmp->next;
+		}
+		nd->index = count_i;
+		nd = nd->next;
+	}
 }

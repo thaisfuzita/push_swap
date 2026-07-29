@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tjulya-c <tjulya-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 12:35:56 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/27 17:51:14 by hrique           ###   ########.fr       */
+/*   Updated: 2026/07/29 14:14:31 by tjulya-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,13 +81,13 @@ int		*parse_numbers(int argc, char **argv, int *count, t_bench *bench);
 int		items_num(char **list);
 int		is_strat_flag(char *str);
 long	convert_num(char *str);
-void    medium(t_stack *a, t_stack *b, t_bench *bm);
+void	medium(t_stack *a, t_stack *b, t_bench *bm);
 int		ft_sqrt(int nb);
-void 	free_all(t_stack *a, t_stack *b, int *nums);
+void	free_all(t_stack *a, t_stack *b, int *nums);
 void	check_error(int count);
 void	ordernation(t_stack *a, t_stack *b, t_bench *bm);
 void	init_bench(t_bench *bm);
-void 	complex(t_stack *a, t_stack *b, t_bench *bm);
+void	complex(t_stack *a, t_stack *b, t_bench *bm);
 void	simple(t_stack *a, t_stack *b, t_bench *bm);
 char	**split_args(char *str);
 void	index_normalize(t_stack *a);

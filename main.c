@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tjulya-c <tjulya-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 14:31:23 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/27 18:05:13 by hrique           ###   ########.fr       */
+/*   Updated: 2026/07/29 14:09:28 by tjulya-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ static void	init_stack(t_stack *x)
 
 static t_node	*new_node(int value)
 {
-	t_node *nd;
-	
+	t_node	*nd;
+
 	nd = malloc(sizeof(t_node));
 	if (!nd)
 		return (NULL);
@@ -35,8 +35,8 @@ static t_node	*new_node(int value)
 
 static int	populate(t_stack *a, int *numbers, int count)
 {
-	t_node *nd;
-	int	i;
+	t_node	*nd;
+	int		i;
 
 	i = count - 1;
 	while (i >= 0)
@@ -82,6 +82,5 @@ int	main(int argc, char **argv)
 	if (populate(&a, numbers, count) == 0)
 		ordernation(&a, &b, &bm);
 	free_all(&a, &b, numbers);
-
 	return (0);
 }

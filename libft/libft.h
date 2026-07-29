@@ -68,12 +68,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 
-int	ft_printf(const char *s, ...);
-int	print_char(char c);
-int	print_str(char *s);
-int	print_hexa(unsigned int nbr, char c);
-int	print_ptr(void *ptr);
-int	print_nbr(int n);
-int	print_unint(unsigned int n);
+int		ft_printf(const char *s, ...);
+int		print_char(char c);
+int		print_str(char *s);
+int		print_hexa(unsigned int nbr, char c);
+int		print_ptr(void *ptr);
+int		print_nbr(int n);
+int		print_unint(unsigned int n);
 
 #endif

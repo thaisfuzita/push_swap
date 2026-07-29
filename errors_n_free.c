@@ -5,7 +5,7 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/06 17:51:52 by thaisfuzita       #+#    #+#             */
+/*   Created: 2026/07/06 17:51:52 by tjulya-c          #+#    #+#             */
 /*   Updated: 2026/07/11 19:08:22 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -27,8 +27,8 @@ void	free_matrix(char **list)
 
 void	free_all(t_stack *a, t_stack *b, int *nums)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 	t_node	*nd;
 
 	i = a->size;

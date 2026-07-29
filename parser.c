@@ -5,7 +5,7 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/06 19:08:18 by thaisfuzita       #+#    #+#             */
+/*   Created: 2026/07/06 19:08:18 by tjulya-c          #+#    #+#             */
 /*   Updated: 2026/07/11 19:15:27 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -21,15 +21,15 @@ static int	parse_flags(int argc, char **argv, t_bench *bm)
 	{
 		if (is_strat_flag(argv[i]) && bm->strategy != EMPTY)
 			return (i);
-		if (ft_strncmp(argv[i], "--bench", 7) == 0)
+		if (ft_strncmp(argv[i], "--bench", ft_strlen(argv[i])) == 0)
 			bm->b_activate = 1;
-		else if (ft_strncmp(argv[i], "--simple", 8) == 0)
+		else if (ft_strncmp(argv[i], "--simple", ft_strlen(argv[i])) == 0)
 			bm->strategy = SIMPLE;
-		else if (ft_strncmp(argv[i], "--medium", 8) == 0)
+		else if (ft_strncmp(argv[i], "--medium", ft_strlen(argv[i])) == 0)
 			bm->strategy = MEDIUM;
-		else if (ft_strncmp(argv[i], "--complex", 9) == 0)
+		else if (ft_strncmp(argv[i], "--complex", ft_strlen(argv[i])) == 0)
 			bm->strategy = COMPLEX;
-		else if (ft_strncmp(argv[i], "--adaptive", 10) == 0)
+		else if (ft_strncmp(argv[i], "--adaptive", ft_strlen(argv[i])) == 0)
 			bm->strategy = ADAPTIVE;
 		else
 			return (i);

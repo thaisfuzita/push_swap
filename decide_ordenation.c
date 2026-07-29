@@ -6,7 +6,7 @@
 /*   By: tjulya-c <tjulya-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/07 15:57:32 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/29 14:25:36 by tjulya-c         ###   ########.fr       */
+/*   Updated: 2026/07/29 14:42:11 by tjulya-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static float	ft_check_disorder(t_stack *a)
 	mistakes = 0;
 	total_pairs = 0;
 	nd = a->top;
-	nx = nd->next;shortest_rotation(b, bm, pos, ft_rb, ft_r_rb);
+	nx = nd->next;
 	while (nd->next != NULL)
 	{
 		while (nx != NULL )

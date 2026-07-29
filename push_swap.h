@@ -6,7 +6,7 @@
 /*   By: tjulya-c <tjulya-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 12:35:56 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/29 14:14:31 by tjulya-c         ###   ########.fr       */
+/*   Updated: 2026/07/29 17:10:28 by tjulya-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,5 +94,6 @@ void	index_normalize(t_stack *a);
 void	print_op(char *op, t_bench *bm);
 void	print_bench(t_bench *bm);
 void	bench_write_label(char *name, int val);
+void	decide_small_ordenation(t_stack *a, t_stack *b, t_bench *bm);
 
 #endif

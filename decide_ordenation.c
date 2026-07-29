@@ -6,7 +6,7 @@
 /*   By: tjulya-c <tjulya-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/07 15:57:32 by tjulya-c          #+#    #+#             */
-/*   Updated: 2026/07/29 14:42:11 by tjulya-c         ###   ########.fr       */
+/*   Updated: 2026/07/29 17:16:39 by tjulya-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,14 @@ void	ordernation(t_stack *a, t_stack *b, t_bench *bm)
 
 	disorder = ft_check_disorder(a);
 	bm->disorder = disorder;
-	exec_mode(a, b, bm, disorder);
+	if (a->size <= 5 && (bm->strategy == 0 || bm->strategy == 4))
+	{
+		if (is_ordered(disorder))
+			return ;
+		decide_small_ordenation(a, b, bm);
+	}
+	else
+		exec_mode(a, b, bm, disorder);
 	if (bm->b_activate == 1)
 		print_bench(bm);
 }

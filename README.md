@@ -143,7 +143,7 @@ level, not about any single favorable arrangement.
 
 ### AI usage
 
-Claude (Anthropic) was used throughout development as a debugging and design
+AI was used throughout development as a debugging and design
 assistant, always reviewed and understood by both learners before being
 applied:
 
